@@ -1,0 +1,7 @@
+node_modules
+dist
+dist-ssr
+_raw
+*.local
+.claude
+.vercel

@@ -1,0 +1,148 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-ink: #1f1916;
+  --color-cocoa: #3a2b25;
+  --color-cream: #f6efe7;
+  --color-paper: #fdf9f4;
+  --color-blush: #fdf0f0;
+  --color-petal: #f7dbe1;
+  --color-rose: #d4567d;
+  --color-rose-deep: #b8406a;
+  --color-rose-light: #f29ab4;
+  --color-muted: #75675f;
+  --color-line: #eadcd2;
+
+  --font-serif: 'Instrument Serif', Georgia, serif;
+  --font-sans: 'Manrope', 'Helvetica Neue', Arial, sans-serif;
+
+  --ease-lux: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 96px;
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    @apply bg-paper font-sans text-ink antialiased;
+    overflow-x: hidden;
+  }
+  ::selection {
+    background: var(--color-rose);
+    color: #fff;
+  }
+  img {
+    max-width: 100%;
+    display: block;
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-rose);
+    outline-offset: 3px;
+  }
+}
+
+/* small letter-spaced label above headings */
+@utility eyebrow {
+  @apply font-sans text-[11px] font-bold tracking-[0.22em] text-rose uppercase;
+}
+@utility display {
+  @apply font-serif leading-[0.95] font-normal tracking-[-0.015em];
+}
+@utility btn {
+  @apply inline-flex items-center justify-center gap-2.5 px-7 py-4 text-[12px] font-bold tracking-[0.14em] uppercase transition-all duration-500;
+  transition-timing-function: var(--ease-lux);
+}
+@utility btn-rose {
+  @apply btn bg-rose text-white hover:-translate-y-0.5 hover:bg-rose-deep;
+  box-shadow: 0 12px 30px -14px rgba(212, 86, 125, 0.75);
+}
+@utility btn-outline-light {
+  @apply btn border border-white/40 text-white hover:border-white hover:bg-white hover:text-ink;
+}
+@utility btn-outline {
+  @apply btn border border-ink/25 text-ink hover:border-ink hover:bg-ink hover:text-white;
+}
+@utility link-arrow {
+  @apply inline-flex items-center gap-2 border-b pb-1 text-[11.5px] font-bold tracking-[0.14em] uppercase transition-colors duration-300;
+  & span {
+    @apply transition-transform duration-300;
+  }
+  &:hover span {
+    transform: translateX(4px);
+  }
+}
+@utility container-lux {
+  @apply mx-auto w-full max-w-[1320px] px-5 sm:px-8 lg:px-12;
+}
+
+/* Scroll reveal: only hides content when JS is running, so prerendered HTML is always readable. */
+.js .reveal {
+  opacity: 0;
+  transform: translateY(26px);
+  transition:
+    opacity 0.9s var(--ease-lux),
+    transform 0.9s var(--ease-lux);
+  transition-delay: var(--d, 0ms);
+}
+.js .reveal.is-in {
+  opacity: 1;
+  transform: none;
+}
+
+@keyframes hero-zoom {
+  from {
+    transform: scale(1.1);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+.hero-img {
+  animation: hero-zoom 8s var(--ease-lux) both;
+}
+
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+.marquee {
+  animation: marquee 36s linear infinite;
+}
+
+@keyframes pulse-ring {
+  0% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.45);
+  }
+  100% {
+    box-shadow: 0 0 0 18px rgba(37, 211, 102, 0);
+  }
+}
+.wa-pulse {
+  animation: pulse-ring 2.4s ease-out infinite;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  scrollbar-width: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .js .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .hero-img,
+  .marquee,
+  .wa-pulse {
+    animation: none;
+  }
+}
