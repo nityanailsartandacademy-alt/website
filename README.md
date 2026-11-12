@@ -32,7 +32,7 @@ Deploy: import the repo into Vercel. `vercel.json` is included and the output is
 ## Before launch
 
 - [ ] Photos are temporary, taken from the studio's Google Business listing. Swap in originals in `public/images/`, keeping the same file names.
-- [ ] Confirm the WhatsApp number. It is currently set to 88715 89233, the number on Google and Instagram. Posters also show 79749 39468.
+- [x] WhatsApp number confirmed: 88715 89233.
 - [ ] Confirm the prices. The menu uses the list the studio published on Google about 10 months ago. A recent Instagram reel mentions gel ₹899 and acrylic ₹1,199.
 - [ ] Confirm the course fee: ₹10,000 offer (regular ₹12,000) + ₹300 registration.
 - [ ] Confirm the address. Google says 19 GM, Scheme 54, but older posters say 247 FH, Scheme 54.
