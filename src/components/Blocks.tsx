@@ -108,9 +108,12 @@ export function BookBand() {
           </div>
         </div>
         <div className="reveal flex flex-col justify-between bg-rose p-8 text-white sm:p-10" style={d(120)}>
-          <div>
-            <h3 className="display text-[40px]">Need help?</h3>
-            <p className="mt-1 font-serif text-[24px] text-white/85 italic">We're here for you.</p>
+          <div className="flex items-start justify-between gap-4">
+            <div>
+              <h3 className="display text-[40px]">Need help?</h3>
+              <p className="mt-1 font-serif text-[24px] text-white/85 italic">We're here for you.</p>
+            </div>
+            <img src="/images/logo.jpg" alt="Nitya Nail Art" className="h-12 w-12 shrink-0 rounded-full border border-white/30 object-cover shadow-lg" />
           </div>
           <div className="mt-10 space-y-4 text-[14px]">
             <p>

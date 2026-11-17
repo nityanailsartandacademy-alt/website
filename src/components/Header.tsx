@@ -28,7 +28,7 @@ export function Header() {
         }`}
       >
         <div className="container-lux flex items-center justify-between gap-6">
-          <Link to="/" aria-label="Nitya Nail Art & Academy — home">
+          <Link to="/" aria-label="Nitya Nail Art & Academy — home" className="group">
             <Logo />
           </Link>
 
@@ -68,11 +68,16 @@ export function Header() {
 
       {/* Mobile menu — outside <header> so the header's backdrop-filter can't trap this fixed overlay. */}
       <div
-        className={`fixed inset-0 z-[45] flex h-[100dvh] flex-col justify-between bg-paper px-6 pt-28 pb-10 transition-all duration-500 xl:hidden ${
+        className={`fixed inset-0 z-[45] flex h-[100dvh] flex-col justify-between bg-paper px-6 pt-24 pb-10 transition-all duration-500 xl:hidden ${
           open ? 'visible opacity-100' : 'invisible opacity-0'
         }`}
       >
-        <nav className="flex flex-col" aria-label="Mobile">
+        <div className="border-b border-line pb-4">
+          <Link to="/" onClick={() => setOpen(false)} aria-label="Nitya Nail Art & Academy — home" className="group inline-block">
+            <Logo size="md" />
+          </Link>
+        </div>
+        <nav className="flex flex-col overflow-y-auto" aria-label="Mobile">
           {[{ label: 'Home', href: '/' }, ...NAV].map((n, i) => (
             <NavLink
               key={n.href}

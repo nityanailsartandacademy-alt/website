@@ -1,4 +1,4 @@
-import { BUSINESS, COURSE, MENU, NAV, type PageMeta } from './data/site'
+import { BRIDAL_PACKAGE, BUSINESS, COURSE, MENU, NAV, type PageMeta } from './data/site'
 
 /** JSON-LD for Google: NailSalon with address, geo, hours, rating, price list and the academy course. */
 export function salonSchema(siteUrl: string) {
@@ -7,7 +7,8 @@ export function salonSchema(siteUrl: string) {
     '@id': `${siteUrl}/#salon`,
     name: BUSINESS.name,
     url: `${siteUrl}/`,
-    image: `${siteUrl}/images/og-image.jpg`,
+    logo: `${siteUrl}/images/logo.jpg`,
+    image: `${siteUrl}/images/logo.jpg`,
     telephone: BUSINESS.phone.tel,
     priceRange: '₹₹',
     address: {
@@ -28,15 +29,23 @@ export function salonSchema(siteUrl: string) {
     sameAs: [BUSINESS.instagram.url, BUSINESS.googleUrl],
     hasOfferCatalog: {
       '@type': 'OfferCatalog',
-      name: 'Nail services',
-      itemListElement: MENU.flatMap((g) =>
-        g.items.map((i) => ({
+      name: 'Nail services & Wedding Season Special',
+      itemListElement: [
+        {
           '@type': 'Offer',
-          price: i.price.replace(/[^\d]/g, ''),
+          price: BRIDAL_PACKAGE.price.replace(/[^\d]/g, ''),
           priceCurrency: 'INR',
-          itemOffered: { '@type': 'Service', name: i.name },
-        })),
-      ),
+          itemOffered: { '@type': 'Service', name: 'Bridal Special Package (@ ₹2,100)' },
+        },
+        ...MENU.flatMap((g) =>
+          g.items.map((i) => ({
+            '@type': 'Offer',
+            price: i.price.replace(/[^\d]/g, ''),
+            priceCurrency: 'INR',
+            itemOffered: { '@type': 'Service', name: i.name },
+          })),
+        ),
+      ],
     },
   }
 }

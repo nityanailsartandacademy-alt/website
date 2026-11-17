@@ -7,9 +7,10 @@ export function Footer() {
     <footer className="bg-ink text-white">
       <div className="container-lux grid gap-12 py-20 sm:grid-cols-2 lg:grid-cols-12">
         <div className="lg:col-span-5">
-          <Logo tone="light" />
-          <h2 className="display mt-8 text-[44px]">Nitya Nail Art & Academy</h2>
-          <p className="mt-4 max-w-[360px] text-[14px] leading-relaxed text-white/60">
+          <Link to="/" className="group inline-block" aria-label="Nitya Nail Art & Academy — home">
+            <Logo tone="light" size="lg" />
+          </Link>
+          <p className="mt-6 max-w-[360px] text-[14px] leading-relaxed text-white/60">
             Nails, considered down to the last detail. A women-owned studio and academy in Vijay Nagar, Indore.
           </p>
         </div>

@@ -6,8 +6,12 @@ export const BUSINESS = {
   tagline: 'Nail Extensions · Nail Art · Academy',
   city: 'Indore',
   area: 'Vijay Nagar',
-  addressLines: ['19 GM, Scheme No. 54, Vijay Nagar', 'Opposite Meghdoot Garden', 'Indore, Madhya Pradesh 452010'],
-  streetAddress: '19 GM, Scheme No. 54, Vijay Nagar, Opposite Meghdoot Garden',
+  addressLines: [
+    '19 GM & 247 FH, Scheme No. 54, Vijay Nagar',
+    'Opposite Meghdoot Garden',
+    'Indore, Madhya Pradesh 452010',
+  ],
+  streetAddress: '19 GM & 247 FH, Scheme No. 54, Vijay Nagar, Opposite Meghdoot Garden',
   postalCode: '452010',
   region: 'Madhya Pradesh',
   geo: { lat: 22.753835, lng: 75.8882225 },
@@ -32,90 +36,377 @@ export const whatsappLink = (message = 'Hi Nitya Nail Art, I would like to book 
 export const NAV = [
   { label: 'About', href: '/about' },
   { label: 'Services', href: '/services' },
-  { label: 'Menu', href: '/menu' },
+  { label: 'Menu & Offers', href: '/menu' },
   { label: 'Academy', href: '/academy' },
   { label: 'Gallery', href: '/gallery' },
   { label: 'Reviews', href: '/reviews' },
   { label: 'Contact', href: '/contact' },
 ]
 
+/* ---------- Bridal Special Package (Image 2) ---------- */
+
+export const BRIDAL_PACKAGE = {
+  badge: 'Special Bridal Package',
+  title: 'Bridal Booking for Your Special Day',
+  tagline: 'Complete Bridal Glam · Long Lasting · Premium Finish',
+  price: '₹2,100',
+  priceSuffix: 'Only',
+  image: '/images/offers/bridal-package.jpg',
+  highlights: [
+    { title: 'Gel Nail Extensions', finish: 'with Cat Eye Finish', icon: '💅' },
+    { title: 'Toe Nail Polishing', finish: 'with Cat Eye Finish', icon: '✨' },
+  ],
+  perks: [
+    'Gel Nail Extensions on Hands with Cat Eye Finish',
+    'Toe Nail Polishing with Matching Cat Eye Finish',
+    'Premium Salon Quality Finish',
+    'Long-Lasting Formula for All Wedding Rituals',
+    'Complete Bridal Glam Styled Around Your Outfit',
+  ],
+  whatsappMessage: 'Hi Nitya Nail Art, I want to book the Bridal Special Package (@ ₹2,100 only) for my wedding/event.',
+}
+
+/* ---------- Wedding Season Special Offers (Images 1 & 4) ---------- */
+
+export const WEDDING_SEASON_SPECIAL = {
+  eyebrow: 'Wedding Season Special',
+  title: 'Premium Nail Services with Professional Finish',
+  description:
+    'Exclusive promotional rates on nail extensions, overlays, and toe care in Vijay Nagar, Indore. Crafted with professional products, hygienic tools, and skilled artists.',
+  badges: ['Professional Products', 'Hygienic Tools', 'Skilled Artist'],
+  artExtraNote: 'Nail Art Extra: ₹30 to ₹50 per finger / toe',
+  lightPoster: '/images/offers/wedding-special-light.jpg',
+  darkPoster: '/images/offers/wedding-special-dark.jpg',
+}
+
 /* ---------- Services ---------- */
 
-export type Service = { id: string; title: string; text: string; image: string; from: string; category: string }
+export type Service = {
+  id: string
+  title: string
+  text: string
+  image: string
+  from: string
+  regularPrice?: string
+  duration?: string
+  category: string
+  badge?: string
+}
 
-export const SERVICE_CATEGORIES = ['Nail extensions', 'Nail art', 'Overlays & polish', 'Toe nails'] as const
+export const SERVICE_CATEGORIES = ['Nail extensions', 'Nail art', 'Overlays & polish', 'Toe nails', 'Bridal special'] as const
 
 export const SERVICES: Service[] = [
-  { id: 'gel', category: 'Nail extensions', title: 'Gel nail extensions', text: 'Lightweight, glossy and natural-looking length that lasts around 20 days.', image: '/images/svc-gel.webp', from: '₹699' },
-  { id: 'acrylic', category: 'Nail extensions', title: 'Acrylic extensions', text: 'Our strongest, longest-lasting set — about a month of flawless wear.', image: '/images/svc-acrylic.webp', from: '₹1,250' },
-  { id: 'art', category: 'Nail art', title: 'Custom nail art', text: 'Florals, ombré, chrome, French tips, cat-eye and 3D — designed around you.', image: '/images/svc-art.webp', from: '₹50 / nail' },
-  { id: 'french', category: 'Nail art', title: 'French & chrome', text: 'Clean classic French tips, mirror chrome and glazed finishes.', image: '/images/svc-french.webp', from: '₹50 / nail' },
-  { id: 'overlay', category: 'Overlays & polish', title: 'Gel & acrylic overlays', text: 'Strengthen your natural nails with a durable overlay and free polishing.', image: '/images/svc-overlay.webp', from: '₹599' },
-  { id: 'toe', category: 'Toe nails', title: 'Toe nail extensions', text: 'Toe gel polish, extensions and overlays to match your hands.', image: '/images/svc-toe.webp', from: '₹400' },
+  {
+    id: 'bridal',
+    category: 'Bridal special',
+    title: 'Bridal Special Package',
+    text: 'Complete hands and toes package: Gel nail extensions with Cat Eye finish + Toe nail polishing with Cat Eye finish.',
+    image: '/images/offers/bridal-package.jpg',
+    from: '₹2,100',
+    duration: 'Hands & Toes Set',
+    badge: 'Popular',
+  },
+  {
+    id: 'gel',
+    category: 'Nail extensions',
+    title: 'Gel nail extensions + Polishing',
+    text: 'Lightweight, glossy and natural-looking length with free polishing. Lasts approximately 20 days.',
+    image: '/images/real-burgundy-polka-fur.jpg',
+    from: '₹699',
+    regularPrice: '₹799',
+    duration: 'Lasts 20 Days',
+  },
+  {
+    id: 'korean',
+    category: 'Nail extensions',
+    title: 'Korean gel extensions + Polishing',
+    text: 'Ultra-thin, crystal-clear aesthetic length with free polishing. Lasts approximately 15 days.',
+    image: '/images/real-nude-gold-contour.jpg',
+    from: '₹599',
+    regularPrice: '₹699',
+    duration: 'Lasts 15 Days',
+  },
+  {
+    id: 'temporary',
+    category: 'Nail extensions',
+    title: 'Temporary nail extensions + Polishing',
+    text: 'Quick glam for parties, weddings and short-term celebrations. Lasts approximately 10 days.',
+    image: '/images/real-french-polka-flower.jpg',
+    from: '₹399',
+    regularPrice: '₹499',
+    duration: 'Lasts 10 Days',
+  },
+  {
+    id: 'acrylic',
+    category: 'Nail extensions',
+    title: 'Acrylic nail extensions + Polishing',
+    text: 'Our strongest, longest-lasting set with free polishing — about 1 month of flawless wear.',
+    image: '/images/real-matte-gloss-black.jpg',
+    from: '₹1,099',
+    regularPrice: '₹1,399',
+    duration: 'Lasts 1 Month',
+  },
+  {
+    id: 'gel-polish',
+    category: 'Overlays & polish',
+    title: 'Gel nail polish',
+    text: 'Glossy salon gel coat directly on your natural nails. (No lasting guarantee).',
+    image: '/images/real-toe-pink-rings.jpg',
+    from: '₹249',
+    regularPrice: '₹349',
+  },
+  {
+    id: 'gel-overlay',
+    category: 'Overlays & polish',
+    title: 'Gel overlay',
+    text: 'Strengthen and protect natural nails with a crystal gel coat. Includes free polishing.',
+    image: '/images/real-french-polka-flower.jpg',
+    from: '₹699',
+    duration: 'Free Polishing Included',
+  },
+  {
+    id: 'acrylic-overlay',
+    category: 'Overlays & polish',
+    title: 'Acrylic overlay',
+    text: 'Extra durability for weak or brittle nails with high gloss. Includes free polishing.',
+    image: '/images/real-burgundy-polka-silk.jpg',
+    from: '₹999',
+    regularPrice: '₹1,199',
+    duration: 'Free Polishing Included',
+  },
+  {
+    id: 'art',
+    category: 'Nail art',
+    title: 'Custom nail art & 3D designs',
+    text: 'Florals, ombré, chrome, cat eye, marble, spider art, animal prints, stones and 3D/4D art.',
+    image: '/images/real-art-3d-floral.jpg',
+    from: '₹30 – ₹50 / finger',
+  },
+  {
+    id: 'toe-services',
+    category: 'Toe nails',
+    title: 'Toe extensions & gel overlays',
+    text: 'Matching toe gel polishing (₹399), toe extensions (₹699), gel overlays (₹699) & acrylic overlays (₹1,099).',
+    image: '/images/real-toe-pink-rings-wide.jpg',
+    from: '₹399',
+    regularPrice: '₹499',
+  },
 ]
 
-/* ---------- Menu & prices (as published on the studio's Google profile) ---------- */
+/* ---------- Menu & Prices (Wedding Season Special) ---------- */
 
-export type MenuItem = { name: string; price: string; note?: string }
-export type MenuGroup = { id: string; title: string; intro: string; extra?: string; items: MenuItem[] }
+export type MenuItem = {
+  name: string
+  price: string
+  regularPrice?: string
+  durability?: string
+  note?: string
+  extra?: string
+  highlight?: boolean
+}
+
+export type MenuGroup = {
+  id: string
+  title: string
+  intro: string
+  extra?: string
+  items: MenuItem[]
+}
 
 export const MENU: MenuGroup[] = [
   {
     id: 'extensions',
     title: 'Nail extensions',
-    intro: 'Every extension set includes polishing.',
-    extra: 'Nail art extra · ₹50 per finger',
+    intro: 'All extensions include free polishing. Professional products & hygienic application.',
+    extra: 'Nail Art Extra: ₹30 to ₹50 per finger',
     items: [
-      { name: 'Temporary nail extensions', price: '₹400', note: 'Lasts about 10 days' },
-      { name: 'Korean gel extensions', price: '₹600', note: 'Lasts about 15 days' },
-      { name: 'Gel nail extensions', price: '₹699', note: 'Lasts about 20 days' },
-      { name: 'Acrylic nail extensions', price: '₹1,250', note: 'Lasts about 1 month' },
+      {
+        name: 'Gel nail polish',
+        price: '₹249',
+        regularPrice: '₹349',
+        durability: 'Express polish',
+        note: 'No lasting guarantee',
+      },
+      {
+        name: 'Temporary nail extensions + Polishing',
+        price: '₹399',
+        regularPrice: '₹499',
+        durability: 'Lasts 10 Days',
+        extra: 'Nail Art Extra – ₹30/Finger',
+      },
+      {
+        name: 'Korean gel extensions + Polishing',
+        price: '₹599',
+        regularPrice: '₹699',
+        durability: 'Lasts 15 Days',
+        extra: 'Nail Art Extra – ₹30/Finger',
+      },
+      {
+        name: 'Gel nail extensions + Polishing',
+        price: '₹699',
+        regularPrice: '₹799',
+        durability: 'Lasts 20 Days',
+        extra: 'Nail Art Extra – ₹30/Finger',
+        highlight: true,
+      },
+      {
+        name: 'Acrylic nail extensions + Polishing',
+        price: '₹1,099',
+        regularPrice: '₹1,399',
+        durability: 'Lasts 1 Month',
+        extra: 'Nail Art Extra – ₹30/Finger',
+        highlight: true,
+      },
     ],
   },
   {
     id: 'overlays',
-    title: 'Overlays & polish',
-    intro: 'Strength and shine for your natural nails.',
-    extra: 'Nail art extra · ₹50 per finger',
+    title: 'Overlay services',
+    intro: 'Strengthen your natural nails. Both gel and acrylic overlays include free polishing.',
+    extra: 'Nail Art Extra: ₹30 to ₹50 per finger',
     items: [
-      { name: 'Gel nail polish', price: '₹300', note: 'No lasting guarantee' },
-      { name: 'Gel overlay', price: '₹599', note: 'Free polishing' },
-      { name: 'Acrylic overlay', price: '₹999', note: 'Free polishing' },
+      {
+        name: 'Gel overlay',
+        price: '₹699',
+        note: 'Free Polishing included',
+        extra: 'Nail Art Extra – ₹30/Finger',
+      },
+      {
+        name: 'Acrylic overlay',
+        price: '₹999',
+        regularPrice: '₹1,199',
+        note: 'Free Polishing included',
+        extra: 'Nail Art Extra – ₹30/Finger',
+        highlight: true,
+      },
     ],
   },
   {
     id: 'toes',
-    title: 'Toe nails',
-    intro: 'Matching care for your feet.',
-    extra: 'Nail art extra · ₹30 per toe',
+    title: 'Toe services',
+    intro: 'Matching luxury toe extensions, overlays and gel polishing for feet.',
+    extra: 'Art Extra: ₹30 per finger/toe',
     items: [
-      { name: 'Toe gel polishing', price: '₹400' },
-      { name: 'Toe extensions', price: '₹600' },
-      { name: 'Toe gel overlay', price: '₹600' },
-      { name: 'Toe acrylic overlay', price: '₹999' },
+      {
+        name: 'Toe gel polishing',
+        price: '₹399',
+        regularPrice: '₹499',
+        extra: 'Art Extra – ₹30/Finger',
+      },
+      {
+        name: 'Toe extensions',
+        price: '₹699',
+        extra: 'Art Extra – ₹30/Finger',
+      },
+      {
+        name: 'Toe gel overlay',
+        price: '₹699',
+        extra: 'Art Extra – ₹30/Finger',
+      },
+      {
+        name: 'Toe acrylic overlay',
+        price: '₹1,099',
+        regularPrice: '₹1,199',
+        extra: 'Art Extra – ₹30/Finger',
+      },
     ],
   },
 ]
 
-/* ---------- Academy ---------- */
+/* ---------- Academy (Bumper Offer & Full 40+ Curriculum from Image 3) ---------- */
 
 export const COURSE = {
   name: 'Basic to Professional Nail Course',
-  price: '₹10,000',
-  regular: '₹12,000',
-  registration: '₹300',
-  perks: ['Basic to advanced nail art', 'Complete practical training', 'All practice products provided', 'Live model practice', 'Certificate on completion'],
+  taglineHindi: 'सपने आपके, सफलता हमारी!',
+  sublineHindi: 'सीखें प्रोफेशनल नेल आर्ट अब कम फीस में!',
+  offerBadge: 'BUMPER OFFER! LIMITED TIME OFFER',
+  price: '₹8,500',
+  regular: '₹10,000',
+  savings: 'Save ₹1,500',
+  posterImage: '/images/offers/academy-course.jpg',
+  perks: [
+    '100% Practical Training',
+    'All Practice Products Provided',
+    'Certificate Provided on Completion',
+    'Expert Guidance from Senior Nail Artists',
+    'Lifetime Support & Doubt Solving',
+    'Live Model Hands-on Practice',
+  ],
   modules: [
-    { title: 'Foundations', items: ['Nail anatomy', 'Nail preparation', 'All nail shapes', 'Product & tools knowledge', 'Tool cleaning & hygiene'] },
     {
-      title: 'Extensions',
-      items: ['Gel extension & refilling', 'Acrylic extension & refilling', 'Korean extension', 'Full tip extension', 'Polygel extension', 'Builder gel overlay', 'Toe extension'],
+      title: 'Foundations & Nail Prep',
+      description: 'Master nail anatomy, shaping, product science and sanitation hygiene.',
+      items: [
+        'Introduction to Nail Anatomy',
+        'Nail Preparation',
+        'All Types of Shape',
+        'Product Knowledge',
+        'Tools Knowledge',
+        'Tools Cleaning and Hygiene Tips',
+      ],
     },
     {
-      title: 'Nail art techniques',
-      items: ['French tip', 'Chrome & mirror chrome', 'Ombré', 'Cat eye', 'Marble & multi-marble', 'Foil, glitter & sugar dust', 'Blooming gel', 'Emboss & carving gel', 'Spider art & line art', 'Animal prints', 'Stone work', '3D & 4D art'],
+      title: 'Complete Extension Systems',
+      description: 'Hands-on training for gel, acrylic, Korean, polygel and tip extensions.',
+      items: [
+        'Gel Extension',
+        'Gel Extension Refilling',
+        'Gel Polish on Gel Extension',
+        'Acrylic Extension',
+        'Acrylic Extension Refilling',
+        'Gel Polish on Acrylic Extension',
+        'Korean Extension',
+        'Full Tip Extension',
+        'Polygel Extension',
+        'Overlay of Builder Gel',
+        'Gel Polish on Natural Nails',
+        'Toe Extension',
+        'Emboss with Acrylic',
+      ],
     },
-    { title: 'Business skills', items: ['Pricing structure', 'How to photograph your work', 'Building your client base'] },
+    {
+      title: 'Signature Art & Trending Styles',
+      description: 'Master lines, chrome, French, marble and precision brush techniques.',
+      items: [
+        'French Tip',
+        'Classic Mirror Chrome',
+        'Chrome Design',
+        'Spider Art',
+        'Sugar Dust',
+        'Line Arts',
+        'Swirls',
+        'Marble Nails',
+        'Multi Marble',
+        'Tape Art',
+        'Emboss with Gel',
+      ],
+    },
+    {
+      title: 'Advanced Effects & 3D/4D Textures',
+      description: 'Specialized wedding and editorial techniques for high-ticket client sets.',
+      items: [
+        '5 Types of Animal Print (Zebra, Leopard, Cat, Cow, Snake)',
+        'Glitter Applications',
+        'Blooming Gel',
+        'Ombre',
+        'Cat Eye Finish',
+        'Foil Art',
+        'Stone Work',
+        'Carving Gel',
+        '3D & 4D Arts',
+      ],
+    },
+    {
+      title: 'Live Practice & Business Skills',
+      description: 'Everything you need to launch a profitable salon or freelance career.',
+      items: [
+        'Live Model Practice',
+        'In-Class Notes Provided',
+        'Salon & Freelance Pricing Structure',
+        'How to Click Professional Photos for Instagram',
+        'Client Consultation & Retention Tips',
+      ],
+    },
   ],
 }
 
@@ -164,7 +455,7 @@ export const REVIEWS = [
   {
     name: 'Shruti Singh',
     service: 'Nail art',
-    text: "The finishing is beautiful and the nails are done exactly the way I wanted. The service is affordable and long-lasting. Highly recommended!",
+    text: 'The finishing is beautiful and the nails are done exactly the way I wanted. The service is affordable and long-lasting. Highly recommended!',
   },
   {
     name: 'Palak Goswami',
@@ -178,81 +469,86 @@ export const REVIEW_TAGS = [
   { label: 'Nail extensions', count: 9 },
   { label: 'Affordability', count: 6 },
   { label: 'Polite staff', count: 6 },
-  { label: 'Designs', count: 5 },
-  { label: 'Friendly environment', count: 4 },
 ]
 
-/* ---------- Gallery ---------- */
+/* ---------- Gallery works ---------- */
 
 export const GALLERY = [
-  { src: '/images/g01.webp', alt: 'Soft pink almond extensions with white tips', w: 907, h: 1000 },
-  { src: '/images/g06.webp', alt: 'Burgundy nail art with heart details', w: 675, h: 900 },
-  { src: '/images/g11.webp', alt: 'French tips with hand-painted yellow flowers', w: 675, h: 900 },
-  { src: '/images/g03.webp', alt: 'Glossy deep maroon gel extensions', w: 675, h: 900 },
-  { src: '/images/g08.webp', alt: 'Pink ombré almond nails', w: 675, h: 900 },
-  { src: '/images/g02.webp', alt: 'Plum glitter nail set', w: 675, h: 900 },
-  { src: '/images/g05.webp', alt: 'Powder blue French tip extensions', w: 570, h: 900 },
-  { src: '/images/g12.webp', alt: 'Neon yellow square gel extensions', w: 675, h: 900 },
-  { src: '/images/g04.webp', alt: 'Pink coffin nails with white French and chrome', w: 675, h: 900 },
-  { src: '/images/g07.webp', alt: 'Lilac and white French extensions', w: 539, h: 900 },
-  { src: '/images/g10.webp', alt: 'Pastel pink almond extensions', w: 675, h: 900 },
-  { src: '/images/g13.webp', alt: 'Pink and white swirl nail art', w: 675, h: 900 },
-  { src: '/images/g09.webp', alt: 'Nude pink extensions with fine line art', w: 675, h: 900 },
-  { src: '/images/g14.webp', alt: 'Inside the Nitya Nail Art studio, Vijay Nagar', w: 750, h: 1000 },
-  { src: '/images/g15.webp', alt: 'Studio entrance decorated with pink balloons', w: 686, h: 900 },
-  { src: '/images/g16.webp', alt: 'Academy student receiving her nail course certificate', w: 682, h: 900 },
+  { src: '/images/real-nude-gold-contour.jpg', alt: 'Nude pink almond extensions with gold contour line art', tag: 'Gold contour', w: 768, h: 1024 },
+  { src: '/images/real-art-3d-floral.jpg', alt: '3D floral nail art with chrome tips and rhinestones', tag: '3D floral', w: 768, h: 1024 },
+  { src: '/images/real-burgundy-polka-fur.jpg', alt: 'Burgundy nails with white polka dots and delicate bow accents', tag: 'Burgundy dots', w: 768, h: 1024 },
+  { src: '/images/real-matte-gloss-black.jpg', alt: 'Matte black stiletto extensions with glossy tip contrast', tag: 'Matte black', w: 768, h: 1024 },
+  { src: '/images/real-french-polka-flower.jpg', alt: 'Burgundy French tips with hand-painted mini flowers', tag: 'French floral', w: 768, h: 1024 },
+  { src: '/images/real-toe-pink-rings.jpg', alt: 'Glossy soft-pink toe gel polish with toe rings', tag: 'Toe polish', w: 768, h: 1024 },
+  { src: '/images/real-art-3d-floral-angle.jpg', alt: 'Detailed angle of 3D sculpted floral nail extensions', tag: 'Sculpted art', w: 768, h: 1024 },
+  { src: '/images/real-burgundy-polka-silk.jpg', alt: 'Deep wine burgundy extensions on satin silk background', tag: 'Wine set', w: 768, h: 1024 },
+  { src: '/images/real-toe-pink-rings-wide.jpg', alt: 'Full set of soft-pink polished toe extensions with ring jewelry', tag: 'Toe extensions', w: 768, h: 1024 },
 ]
 
-/* ---------- Per-page SEO. Each path is prerendered to its own HTML file. ---------- */
+/* ---------- Per-page SEO metadata ---------- */
 
-export type PageMeta = { path: string; title: string; description: string }
+export type PageMeta = {
+  path: string
+  title: string
+  description: string
+}
 
-export const PAGE_META: Record<string, PageMeta> = {
-  '/': {
+export const PAGES: PageMeta[] = [
+  {
     path: '/',
     title: 'Nitya Nail Art & Academy | Nail Extensions & Nail Art Course in Vijay Nagar, Indore',
     description:
-      'Nitya Nail Art & Academy, Vijay Nagar, Indore — gel, acrylic & Korean nail extensions, custom nail art and a certified Basic to Professional nail course. Rated 4.5★ on Google.',
+      'Nitya Nail Art & Academy, Vijay Nagar, Indore — Wedding Season Special from ₹249, Bridal Package @ ₹2,100, and certified Basic to Professional Nail Course @ ₹8,500. Rated 4.5★ on Google.',
   },
-  '/about': {
+  {
     path: '/about',
-    title: 'About Nitya Nail Art & Academy | Women-owned Nail Studio, Indore',
-    description: 'A women-owned nail studio and academy in Vijay Nagar, Indore — hygiene-first service, artists who listen and nail sets that last.',
+    title: 'About Us | Nitya Nail Art & Academy — Vijay Nagar, Indore',
+    description:
+      'Meet Nitya Nail Art & Academy: a women-owned nail studio and academy in Vijay Nagar, Indore, dedicated to clean technique, honest pricing and certified courses.',
   },
-  '/services': {
+  {
     path: '/services',
-    title: 'Nail Services in Indore — Gel, Acrylic & Korean Extensions, Nail Art | Nitya',
-    description: 'Gel and acrylic nail extensions, Korean extensions, custom nail art, French & chrome, overlays and toe nails at Nitya Nail Art, Vijay Nagar, Indore.',
+    title: 'Nail Services in Indore — Bridal Package ₹2,100, Extensions & Nail Art | Nitya',
+    description:
+      'Wedding Season Special: Bridal Package ₹2,100, Gel extensions ₹699, Acrylic extensions ₹1,099, overlays and toe services at Nitya Nail Art, Vijay Nagar, Indore.',
   },
-  '/menu': {
+  {
     path: '/menu',
-    title: 'Nail Price List Indore — Extensions from ₹400 | Nitya Nail Art',
-    description: 'Nitya Nail Art price list: temporary extensions ₹400, Korean gel ₹600, gel extensions ₹699, acrylic ₹1,250, overlays and toe nails. Nail art from ₹50 per finger.',
+    title: 'Nail Price List & Offers Indore — Extensions from ₹249 | Nitya Nail Art',
+    description:
+      'Official Wedding Season Special price list: Gel polish ₹249, Temp extensions ₹399, Korean extensions ₹599, Gel ₹699, Acrylic ₹1,099, Overlays & Toe services.',
   },
-  '/academy': {
+  {
     path: '/academy',
-    title: 'Nail Art Course in Indore — Basic to Professional, Certified | Nitya Academy',
-    description: 'Learn gel, acrylic & Korean extensions and 40+ nail art techniques with practical training, products provided and a certificate. Vijay Nagar, Indore.',
+    title: 'Nail Art Course in Indore — Basic to Professional @ ₹8,500 Bumper Offer | Nitya',
+    description:
+      'Bumper Offer ₹8,500 (was ₹10,000): 40+ nail art techniques, 100% practical training, products provided, live model practice and certificate. Vijay Nagar, Indore.',
   },
-  '/gallery': {
+  {
     path: '/gallery',
-    title: 'Nail Art Gallery — Extensions & Designs | Nitya Nail Art Indore',
-    description: 'Browse nail extensions, French tips, ombré, chrome and custom nail art created at Nitya Nail Art & Academy, Vijay Nagar, Indore.',
+    title: 'Nail Art Gallery — Extensions, Bridal Sets & Designs | Nitya Nail Art Indore',
+    description:
+      'Browse nail extensions, Cat Eye bridal sets, French tips, ombré, chrome and custom nail art created at Nitya Nail Art & Academy, Vijay Nagar, Indore.',
   },
-  '/reviews': {
+  {
     path: '/reviews',
     title: 'Reviews — 4.5★ on Google | Nitya Nail Art & Academy Indore',
-    description: 'Read what clients and students say about Nitya Nail Art & Academy — rated 4.5★ from 107 Google reviews.',
+    description:
+      'Read what clients and students say about Nitya Nail Art & Academy — rated 4.5★ from 107 Google reviews.',
   },
-  '/contact': {
+  {
     path: '/contact',
     title: 'Contact & Book — Nitya Nail Art & Academy, Vijay Nagar, Indore',
-    description: 'Book on WhatsApp +91 88715 89233. 19 GM, Scheme No. 54, Vijay Nagar, opposite Meghdoot Garden, Indore. Open daily 11 AM – 8 PM.',
+    description:
+      'Book on WhatsApp +91 88715 89233. 19 GM & 247 FH, Scheme No. 54, Vijay Nagar, opposite Meghdoot Garden, Indore. Open daily 11 AM – 8 PM.',
   },
-}
+]
 
 export const NOT_FOUND_META: PageMeta = {
   path: '/404',
   title: 'Page not found | Nitya Nail Art & Academy',
   description: 'This page does not exist. Explore Nitya Nail Art & Academy, Vijay Nagar, Indore.',
 }
+
+export const PAGE_META: Record<string, PageMeta> = Object.fromEntries(PAGES.map((p) => [p.path, p]))
+
