@@ -72,7 +72,7 @@ export function Footer() {
       </div>
 
       <div className="border-t border-white/10">
-        <div className="container-lux flex flex-col items-center justify-between gap-3 py-6 text-[11px] font-bold tracking-[0.14em] text-white/45 uppercase sm:flex-row">
+        <div className="container-lux flex flex-col items-center justify-between gap-3 pt-6 pb-24 xl:pb-6 text-[11px] font-bold tracking-[0.14em] text-white/45 uppercase sm:flex-row">
           <p>© {new Date().getFullYear()} Nitya Nail Art & Academy</p>
           <p>
             Designed by{' '}

@@ -10,28 +10,28 @@ export function Logo({
   className?: string
 }) {
   const imgSizes = {
-    sm: 'h-9 w-9',
-    md: 'h-11 w-11 sm:h-12 sm:w-12',
-    lg: 'h-16 w-16 sm:h-20 sm:w-20',
-    xl: 'h-24 w-24 sm:h-32 sm:w-32',
+    sm: 'h-8 w-8 sm:h-9 sm:w-9',
+    md: 'h-10 w-10 sm:h-12 sm:w-12',
+    lg: 'h-14 w-14 sm:h-20 sm:w-20',
+    xl: 'h-20 w-20 sm:h-28 sm:w-32',
   }
 
   const titleSizes = {
-    sm: 'text-[22px]',
-    md: 'text-[28px] sm:text-[30px]',
-    lg: 'text-[36px] sm:text-[44px]',
-    xl: 'text-[48px] sm:text-[56px]',
+    sm: 'text-[20px] sm:text-[22px]',
+    md: 'text-[24px] sm:text-[30px]',
+    lg: 'text-[32px] sm:text-[44px]',
+    xl: 'text-[42px] sm:text-[56px]',
   }
 
   const sublineSizes = {
-    sm: 'text-[7px]',
-    md: 'text-[8.5px]',
-    lg: 'text-[10px] sm:text-[11px]',
-    xl: 'text-[12px]',
+    sm: 'text-[6.5px] sm:text-[7px]',
+    md: 'text-[7.5px] sm:text-[8.5px]',
+    lg: 'text-[9px] sm:text-[11px]',
+    xl: 'text-[11px] sm:text-[12px]',
   }
 
   return (
-    <span className={`inline-flex items-center gap-3.5 ${className}`}>
+    <span className={`inline-flex items-center gap-2.5 sm:gap-3.5 ${className}`}>
       <img
         src="/images/logo.jpg"
         alt="Nitya Nail Art & Academy Logo"

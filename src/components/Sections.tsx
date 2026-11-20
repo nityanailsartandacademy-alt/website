@@ -23,36 +23,36 @@ const d = (ms: number) => ({ ['--d' as string]: `${ms}ms` }) as React.CSSPropert
 
 export function HomeHero() {
   return (
-    <section className="relative grid overflow-hidden bg-ink pt-[76px] text-white lg:min-h-[100svh] lg:grid-cols-[1fr_0.9fr]">
-      <div className="relative z-10 flex items-center px-5 pt-14 pb-14 sm:px-8 lg:px-12 lg:py-24 xl:pl-[max(3rem,calc((100vw-1320px)/2+3rem))]">
+    <section className="relative grid overflow-hidden bg-ink pt-[70px] text-white sm:pt-[76px] lg:min-h-[100svh] lg:grid-cols-[1fr_0.9fr]">
+      <div className="relative z-10 flex items-center px-4 pt-8 pb-10 sm:px-8 lg:px-12 lg:py-24 xl:pl-[max(3rem,calc((100vw-1320px)/2+3rem))]">
         <div className="max-w-[620px]">
-          <div className="reveal inline-flex items-center gap-2 border border-[#EDD28A]/30 bg-[#EDD28A]/10 px-3.5 py-1 text-[11px] font-bold tracking-[0.18em] text-[#EDD28A] uppercase">
+          <div className="reveal inline-flex items-center gap-2 border border-[#EDD28A]/30 bg-[#EDD28A]/10 px-3 py-1 text-[10.5px] font-bold tracking-[0.16em] text-[#EDD28A] uppercase sm:text-[11px]">
             <span>✨</span> Wedding Season Special Live
           </div>
-          <h1 className="reveal display mt-5 text-[clamp(3rem,6.6vw,6.4rem)]" style={d(100)}>
+          <h1 className="reveal display mt-4 sm:mt-5 text-[clamp(2.4rem,6.8vw,6.4rem)]" style={d(100)}>
             <span className="block text-[0.55em] leading-tight">Glamour at your</span> Fingertips
           </h1>
-          <p className="reveal mt-6 max-w-[500px] text-[16px] leading-relaxed text-white/75" style={d(200)}>
+          <p className="reveal mt-4 sm:mt-6 max-w-[500px] text-[15px] sm:text-[16.5px] leading-relaxed text-white/75" style={d(200)}>
             Wedding Season Special: Extensions from ₹249, Bridal Cat Eye Package @ ₹2,100, and certified Basic to Professional nail course @ ₹8,500 — in Vijay Nagar, Indore.
           </p>
-          <div className="reveal mt-8 flex flex-col gap-3 sm:flex-row" style={d(300)}>
-            <a href={whatsappLink()} target="_blank" rel="noopener" className="btn-rose">
+          <div className="reveal mt-6 sm:mt-8 flex flex-col gap-2.5 sm:flex-row" style={d(300)}>
+            <a href={whatsappLink()} target="_blank" rel="noopener" className="btn-rose w-full sm:w-auto text-center active:scale-[0.98]">
               Book appointment ↗
             </a>
-            <Link to="/menu" className="btn-outline-light">
+            <Link to="/menu" className="btn-outline-light w-full sm:w-auto text-center active:scale-[0.98]">
               View offers & menu
             </Link>
           </div>
-          <div className="reveal mt-10 flex flex-wrap items-center gap-x-6 gap-y-3 border-t border-white/10 pt-6" style={d(400)}>
+          <div className="reveal mt-8 sm:mt-10 flex flex-wrap items-center gap-x-5 gap-y-3 border-t border-white/10 pt-5 sm:pt-6" style={d(400)}>
             <RatingChip light />
-            <div className="flex items-center gap-2.5">
+            <div className="flex items-center gap-2">
               <img src="/images/logo.jpg" alt="Nitya Nail Art" className="h-6 w-6 rounded-full border border-white/25 object-cover" />
-              <span className="text-[12px] font-semibold tracking-[0.06em] text-white/60">Women-owned studio</span>
+              <span className="text-[11.5px] sm:text-[12px] font-semibold tracking-[0.06em] text-white/60">Women-owned studio</span>
             </div>
           </div>
         </div>
       </div>
-      <div className="relative h-[60svh] overflow-hidden lg:h-auto">
+      <div className="relative h-[42svh] sm:h-[50svh] overflow-hidden lg:h-auto">
         <img
           src="/images/real-nude-gold-contour.jpg"
           alt="Nude pink almond nail extensions with gold contour line art by Nitya Nail Art, Indore"
@@ -60,10 +60,10 @@ export function HomeHero() {
           fetchPriority="high"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-ink/60 via-transparent to-transparent lg:from-ink/80" />
-        <div className="absolute bottom-5 left-5 border-l-4 border-rose bg-paper/95 px-5 py-4 text-ink shadow-2xl sm:bottom-8 sm:left-8">
-          <p className="text-[10px] font-bold tracking-[0.2em] text-rose uppercase">Wedding Season Special</p>
-          <p className="display text-[38px] leading-tight">From ₹249</p>
-          <p className="text-[11px] font-semibold text-muted">Bridal Package @ ₹2,100</p>
+        <div className="absolute bottom-3 left-3 sm:bottom-8 sm:left-8 border-l-4 border-rose bg-paper/95 px-4 py-3 sm:px-5 sm:py-4 text-ink shadow-2xl backdrop-blur-xs">
+          <p className="text-[9.5px] sm:text-[10px] font-bold tracking-[0.2em] text-rose uppercase">Wedding Season Special</p>
+          <p className="display text-[32px] sm:text-[38px] leading-tight">From ₹249</p>
+          <p className="text-[10.5px] sm:text-[11px] font-semibold text-muted">Bridal Package @ ₹2,100</p>
         </div>
       </div>
     </section>
@@ -87,11 +87,11 @@ const TICKER = [
 export function Marquee() {
   const row = [...TICKER, ...TICKER]
   return (
-    <div className="overflow-hidden bg-rose py-4 text-white" aria-hidden="true">
-      <div className="marquee flex w-max items-center gap-8 whitespace-nowrap">
+    <div className="overflow-hidden bg-rose py-3 text-white sm:py-4" aria-hidden="true">
+      <div className="marquee flex w-max items-center gap-6 whitespace-nowrap sm:gap-8">
         {row.map((w, i) => (
-          <span key={i} className="flex items-center gap-8 font-serif text-[22px] italic">
-            {w} <span className="text-[11px] not-italic">✦</span>
+          <span key={i} className="flex items-center gap-6 font-serif text-[18px] sm:text-[22px] italic sm:gap-8">
+            {w} <span className="text-[10px] sm:text-[11px] not-italic">✦</span>
           </span>
         ))}
       </div>
@@ -103,70 +103,70 @@ export function Marquee() {
 
 export function BridalSpecialSection() {
   return (
-    <section id="bridal" className="relative overflow-hidden bg-gradient-to-br from-[#2D0D19] via-ink to-[#1a0f14] py-20 sm:py-28 text-white">
+    <section id="bridal" className="relative overflow-hidden bg-gradient-to-br from-[#2D0D19] via-ink to-[#1a0f14] py-14 sm:py-20 lg:py-28 text-white">
       <div className="container-lux">
-        <div className="grid items-center gap-12 lg:grid-cols-12">
+        <div className="grid items-center gap-8 lg:grid-cols-12 lg:gap-12">
           <div className="reveal relative lg:col-span-5">
-            <div className="relative mx-auto max-w-[420px] overflow-hidden border-2 border-[#D4AF37]/50 shadow-[0_25px_60px_rgba(0,0,0,0.7)]">
+            <div className="relative mx-auto max-w-[340px] sm:max-w-[420px] overflow-hidden border-2 border-[#D4AF37]/50 shadow-[0_20px_50px_rgba(0,0,0,0.7)]">
               <img
                 src={BRIDAL_PACKAGE.image}
                 alt="Nitya Nail Art & Academy Bridal Booking Special Package @ ₹2,100 Only"
                 className="w-full object-cover"
                 loading="lazy"
               />
-              <div className="absolute top-4 right-4 bg-rose px-4 py-1 text-[10.5px] font-bold tracking-[0.2em] text-white uppercase shadow-md">
+              <div className="absolute top-3 right-3 sm:top-4 sm:right-4 bg-rose px-3 py-1 text-[10px] font-bold tracking-[0.18em] text-white uppercase shadow-md">
                 Bridal Special
               </div>
             </div>
           </div>
           <div className="lg:col-span-7">
-            <div className="reveal inline-flex items-center gap-2 border border-[#EDD28A]/30 bg-[#EDD28A]/10 px-3.5 py-1 text-[11px] font-bold tracking-[0.18em] text-[#EDD28A] uppercase">
+            <div className="reveal inline-flex items-center gap-2 border border-[#EDD28A]/30 bg-[#EDD28A]/10 px-3 py-1 text-[10.5px] font-bold tracking-[0.16em] text-[#EDD28A] uppercase sm:text-[11px]">
               👑 {BRIDAL_PACKAGE.badge}
             </div>
-            <h2 className="reveal display mt-4 text-[clamp(2.8rem,5.5vw,5rem)]">
+            <h2 className="reveal display mt-3 sm:mt-4 text-[clamp(2.4rem,5.5vw,5rem)]">
               Bridal Booking <br />
               <span className="font-serif italic text-rose-light">for Your Special Day</span>
             </h2>
-            <div className="reveal mt-3 flex items-baseline gap-3">
-              <span className="display text-[52px] text-[#EDD28A]">@ {BRIDAL_PACKAGE.price}</span>
-              <span className="text-[20px] font-serif text-white/80 italic">{BRIDAL_PACKAGE.priceSuffix}</span>
+            <div className="reveal mt-2 sm:mt-3 flex items-baseline gap-2.5">
+              <span className="display text-[44px] sm:text-[52px] text-[#EDD28A]">@ {BRIDAL_PACKAGE.price}</span>
+              <span className="text-[18px] sm:text-[20px] font-serif text-white/80 italic">{BRIDAL_PACKAGE.priceSuffix}</span>
             </div>
-            <p className="reveal mt-4 text-[16px] leading-relaxed text-white/75" style={d(100)}>
+            <p className="reveal mt-3 sm:mt-4 text-[15px] sm:text-[16px] leading-relaxed text-white/75" style={d(100)}>
               Your wedding moments deserve breathtaking fingertips and toes. Get our complete Cat Eye bridal set crafted with precision, long-lasting durability, and jewelry-grade shimmer.
             </p>
 
-            <div className="reveal mt-7 grid gap-4 sm:grid-cols-2" style={d(160)}>
+            <div className="reveal mt-6 grid gap-3 sm:grid-cols-2" style={d(160)}>
               {BRIDAL_PACKAGE.highlights.map((h) => (
-                <div key={h.title} className="border border-white/15 bg-white/5 p-5 backdrop-blur-sm transition hover:border-[#EDD28A]/50">
-                  <span className="text-[26px]">{h.icon}</span>
-                  <h3 className="mt-2.5 font-serif text-[22px] text-white">{h.title}</h3>
-                  <p className="mt-1 text-[12.5px] font-bold tracking-[0.14em] text-[#EDD28A] uppercase">{h.finish}</p>
+                <div key={h.title} className="border border-white/15 bg-white/5 p-4 backdrop-blur-sm transition hover:border-[#EDD28A]/50 sm:p-5">
+                  <span className="text-[24px] sm:text-[26px]">{h.icon}</span>
+                  <h3 className="mt-2 font-serif text-[20px] sm:text-[22px] text-white">{h.title}</h3>
+                  <p className="mt-0.5 text-[12px] font-bold tracking-[0.12em] text-[#EDD28A] uppercase">{h.finish}</p>
                 </div>
               ))}
             </div>
 
-            <ul className="reveal mt-7 space-y-2 border-t border-white/10 pt-5" style={d(220)}>
+            <ul className="reveal mt-6 space-y-2 border-t border-white/10 pt-5" style={d(220)}>
               {BRIDAL_PACKAGE.perks.map((p) => (
-                <li key={p} className="flex items-center gap-2.5 text-[14px] text-white/85">
+                <li key={p} className="flex items-center gap-2.5 text-[13.5px] sm:text-[14px] text-white/85">
                   <span className="text-[#EDD28A]">✦</span> {p}
                 </li>
               ))}
             </ul>
 
-            <div className="reveal mt-8 flex flex-col gap-3 sm:flex-row sm:items-center" style={d(280)}>
+            <div className="reveal mt-7 flex flex-col gap-2.5 sm:flex-row sm:items-center" style={d(280)}>
               <a
                 href={whatsappLink(BRIDAL_PACKAGE.whatsappMessage)}
                 target="_blank"
                 rel="noopener"
-                className="btn-rose"
+                className="btn-rose w-full sm:w-auto text-center active:scale-[0.98]"
               >
                 <WhatsAppIcon className="h-4 w-4" /> Book Bridal Appointment Today ↗
               </a>
-              <a href={`tel:${BUSINESS.phone.tel}`} className="btn-outline-light">
+              <a href={`tel:${BUSINESS.phone.tel}`} className="btn-outline-light w-full sm:w-auto text-center active:scale-[0.98]">
                 Call {BUSINESS.phone.display}
               </a>
             </div>
-            <p className="mt-4 text-[12px] text-white/50">
+            <p className="mt-3 text-[11.5px] sm:text-[12px] text-white/50">
               Studio: {BUSINESS.streetAddress} (Opposite Meghdoot Garden), Indore
             </p>
           </div>
@@ -180,24 +180,24 @@ export function BridalSpecialSection() {
 
 export function WeddingSpecialBanner() {
   return (
-    <div className="border-y border-line bg-gradient-to-r from-cream via-paper to-cream py-6">
-      <div className="container-lux flex flex-wrap items-center justify-between gap-4 text-center sm:text-left">
-        <div className="flex flex-wrap items-center gap-2 sm:gap-4">
-          <span className="bg-rose px-3 py-1 text-[10.5px] font-bold tracking-[0.18em] text-white uppercase">
-            Wedding Season Special
+    <div className="border-y border-line bg-gradient-to-r from-cream via-paper to-cream py-3.5 sm:py-5">
+      <div className="container-lux flex flex-col items-center justify-between gap-3 text-center sm:flex-row sm:text-left">
+        <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 sm:justify-start">
+          <span className="bg-rose px-2.5 py-0.5 text-[10px] font-bold tracking-[0.16em] text-white uppercase sm:text-[10.5px]">
+            Wedding Special
           </span>
-          <p className="font-serif text-[20px] text-ink italic">
+          <p className="font-serif text-[17px] sm:text-[20px] text-ink italic">
             Premium Nail Services with Professional Finish
           </p>
         </div>
-        <div className="flex flex-wrap items-center gap-4 text-[12px] font-bold tracking-[0.1em] text-ink/75 uppercase">
+        <div className="flex flex-wrap items-center justify-center gap-2.5 sm:gap-4 text-[11px] sm:text-[12px] font-bold tracking-[0.08em] text-ink/75 uppercase">
           {WEDDING_SEASON_SPECIAL.badges.map((b) => (
-            <span key={b} className="flex items-center gap-1.5">
+            <span key={b} className="flex items-center gap-1 border border-ink/10 bg-white/80 px-2 py-0.5 sm:border-0 sm:bg-transparent sm:p-0">
               <span className="text-rose">✓</span> {b}
             </span>
           ))}
           <span className="hidden text-rose md:inline">·</span>
-          <span className="text-rose-deep">{WEDDING_SEASON_SPECIAL.artExtraNote}</span>
+          <span className="text-rose-deep font-semibold">{WEDDING_SEASON_SPECIAL.artExtraNote}</span>
         </div>
       </div>
     </div>
@@ -208,16 +208,16 @@ export function WeddingSpecialBanner() {
 
 export function AboutSplit({ cta = { label: 'Our story', to: '/about' } }: { cta?: { label: string; to: string } }) {
   return (
-    <section className="bg-paper py-24 sm:py-32">
-      <div className="container-lux grid items-center gap-14 lg:grid-cols-2 lg:gap-20">
+    <section className="bg-paper py-14 sm:py-20 lg:py-32">
+      <div className="container-lux grid items-center gap-10 lg:grid-cols-2 lg:gap-20">
         <div className="reveal relative">
           <img src="/images/real-burgundy-polka-silk.jpg" alt="Burgundy polka dot nail extensions crafted at Nitya Nail Art, Indore" loading="lazy" width={768} height={1024} className="aspect-[4/5] w-full object-cover" />
           <div className="absolute -bottom-8 -left-3 hidden w-[44%] border-[8px] border-paper shadow-2xl sm:block lg:-left-10">
             <img src="/images/real-french-polka-flower.jpg" alt="Hand-painted floral nail art on burgundy French tips" loading="lazy" className="aspect-[3/4] w-full object-cover" />
           </div>
-          <div className="absolute top-6 right-0 flex items-center gap-2.5 border border-white/10 bg-ink/95 px-4 py-2.5 shadow-2xl sm:-right-4">
-            <img src="/images/logo.jpg" alt="Nitya Nail Art Studio" className="h-6 w-6 rounded-full border border-white/20 object-cover" />
-            <p className="text-[10.5px] font-bold tracking-[0.2em] text-white uppercase">Women-owned</p>
+          <div className="absolute top-3 right-3 sm:top-6 sm:right-0 flex items-center gap-2 border border-white/10 bg-ink/95 px-3 py-2 shadow-2xl backdrop-blur-xs sm:px-4 sm:py-2.5">
+            <img src="/images/logo.jpg" alt="Nitya Nail Art Studio" className="h-5 w-5 sm:h-6 sm:w-6 rounded-full border border-white/20 object-cover" />
+            <p className="text-[10px] sm:text-[10.5px] font-bold tracking-[0.18em] text-white uppercase">Women-owned</p>
           </div>
         </div>
         <div>
@@ -229,7 +229,7 @@ export function AboutSplit({ cta = { label: 'Our story', to: '/about' } }: { cta
               </>
             }
           />
-          <div className="reveal mt-7 space-y-5 text-[16px] leading-[1.8] text-muted" style={d(200)}>
+          <div className="reveal mt-5 sm:mt-7 space-y-4 sm:space-y-5 text-[15px] sm:text-[16px] leading-[1.8] text-muted" style={d(200)}>
             <p>
               Nitya Nail Art & Academy is a women-owned nail studio in Vijay Nagar, Indore. We create extensions that survive real life — cooking,
               cleaning, typing — and art that looks exactly like the picture you fell in love with.
@@ -238,7 +238,7 @@ export function AboutSplit({ cta = { label: 'Our story', to: '/about' } }: { cta
               Whether you need our <strong>Wedding Season Special</strong> sets from ₹249, the signature <strong>Bridal Package @ ₹2,100</strong>, or practical professional training at our Academy, we ensure transparent pricing, hygienic tools, and lasting results.
             </p>
           </div>
-          <Link to={cta.to} className="btn-outline reveal mt-9" style={d(260)}>
+          <Link to={cta.to} className="btn-outline reveal mt-7 sm:mt-9 w-full sm:w-auto text-center active:scale-[0.98]" style={d(260)}>
             {cta.label} <ArrowRight />
           </Link>
         </div>
@@ -247,7 +247,7 @@ export function AboutSplit({ cta = { label: 'Our story', to: '/about' } }: { cta
   )
 }
 
-/* ---------------- Services with category sidebar ---------------- */
+/* ---------------- Services with category carousel / sidebar ---------------- */
 
 export function ServicesShowcase({ onHome = false }: { onHome?: boolean }) {
   const [cat, setCat] = useState<string>('All')
@@ -255,7 +255,7 @@ export function ServicesShowcase({ onHome = false }: { onHome?: boolean }) {
   const list = cat === 'All' ? SERVICES : SERVICES.filter((s) => s.category === cat)
 
   return (
-    <section id="services" className="bg-blush py-24 sm:py-32">
+    <section id="services" className="bg-blush py-14 sm:py-20 lg:py-32">
       <div className="container-lux">
         <SectionHead
           center
@@ -264,16 +264,35 @@ export function ServicesShowcase({ onHome = false }: { onHome?: boolean }) {
           text="Precise technique, professional products, hygienic tools, and transparent pricing."
         />
 
-        <div className="mt-14 grid grid-cols-[minmax(0,1fr)] gap-6 lg:grid-cols-[250px_minmax(0,1fr)]">
-          <aside className="reveal h-fit min-w-0 border border-line bg-white">
+        {/* Mobile Filter Chips Strip (Horizontal swipeable carousel) */}
+        <div className="no-scrollbar -mx-4 mt-8 flex gap-2 overflow-x-auto px-4 pb-2 lg:hidden">
+          {cats.map((c) => (
+            <button
+              key={c}
+              type="button"
+              onClick={() => setCat(c)}
+              className={`shrink-0 rounded-full px-4 py-2 text-[11.5px] font-bold tracking-[0.08em] uppercase transition active:scale-95 ${
+                cat === c
+                  ? 'bg-rose text-white shadow-md'
+                  : 'border border-line bg-white text-ink/80 hover:bg-cream'
+              }`}
+            >
+              {c}
+            </button>
+          ))}
+        </div>
+
+        <div className="mt-8 sm:mt-14 grid grid-cols-[minmax(0,1fr)] gap-6 lg:grid-cols-[250px_minmax(0,1fr)]">
+          {/* Desktop Filter Sidebar */}
+          <aside className="reveal hidden h-fit min-w-0 border border-line bg-white lg:block">
             <p className="border-b border-line px-6 py-5 text-[12px] font-bold tracking-[0.12em] uppercase">Categories</p>
-            <ul className="no-scrollbar flex overflow-x-auto lg:block">
+            <ul>
               {cats.map((c) => (
-                <li key={c} className="shrink-0">
+                <li key={c}>
                   <button
                     type="button"
                     onClick={() => setCat(c)}
-                    className={`flex w-full items-center justify-between gap-6 border-r border-line px-6 py-4 text-left text-[14px] whitespace-nowrap transition-colors lg:border-r-0 lg:border-b ${
+                    className={`flex w-full items-center justify-between gap-6 border-b border-line px-6 py-4 text-left text-[14px] transition-colors ${
                       cat === c ? 'bg-rose text-white' : 'text-ink/75 hover:bg-blush'
                     }`}
                   >
@@ -284,38 +303,39 @@ export function ServicesShowcase({ onHome = false }: { onHome?: boolean }) {
             </ul>
           </aside>
 
-          <div className="grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
+          {/* Cards Grid */}
+          <div className="grid gap-4 sm:gap-5 sm:grid-cols-2 xl:grid-cols-3">
             {list.map((s, i) => (
-              <article key={s.id} id={s.id} className="reveal group flex flex-col border border-line bg-white shadow-sm" style={d((i % 3) * 80)}>
+              <article key={s.id} id={s.id} className="reveal group flex flex-col border border-line bg-white shadow-xs" style={d((i % 3) * 80)}>
                 <div className="relative overflow-hidden">
-                  <img src={s.image} alt={s.title} loading="lazy" className="aspect-[4/3] w-full object-cover transition-transform duration-[1.2s] group-hover:scale-[1.06]" />
+                  <img src={s.image} alt={s.title} loading="lazy" className="aspect-[16/10] sm:aspect-[4/3] w-full object-cover transition-transform duration-[1.2s] group-hover:scale-[1.06]" />
                   {s.badge && (
-                    <span className="absolute top-3 right-3 bg-rose px-3 py-1 text-[10px] font-bold tracking-[0.16em] text-white uppercase shadow">
+                    <span className="absolute top-3 right-3 bg-rose px-2.5 py-0.5 text-[9.5px] font-bold tracking-[0.14em] text-white uppercase shadow">
                       {s.badge}
                     </span>
                   )}
                   {s.duration && (
-                    <span className="absolute bottom-3 left-3 bg-ink/80 px-2.5 py-1 text-[10.5px] font-semibold text-white backdrop-blur-sm">
+                    <span className="absolute bottom-3 left-3 bg-ink/85 px-2.5 py-1 text-[10px] font-semibold text-white backdrop-blur-xs">
                       {s.duration}
                     </span>
                   )}
                 </div>
-                <div className="flex flex-1 flex-col p-6">
-                  <h3 className="font-serif text-[26px] leading-tight transition-colors group-hover:text-rose">{s.title}</h3>
-                  <p className="mt-2 text-[13.5px] leading-relaxed text-muted">{s.text}</p>
-                  <div className="mt-auto flex items-center justify-between gap-4 border-t border-line/70 pt-5">
+                <div className="flex flex-1 flex-col p-4 sm:p-6">
+                  <h3 className="font-serif text-[23px] sm:text-[26px] leading-tight transition-colors group-hover:text-rose">{s.title}</h3>
+                  <p className="mt-1.5 text-[13px] sm:text-[13.5px] leading-relaxed text-muted">{s.text}</p>
+                  <div className="mt-auto flex items-center justify-between gap-3 border-t border-line/70 pt-4">
                     <div>
-                      <span className="block text-[11px] font-bold tracking-[0.12em] text-rose uppercase">Special rate</span>
+                      <span className="block text-[10.5px] font-bold tracking-[0.12em] text-rose uppercase">Special rate</span>
                       <div className="flex items-baseline gap-2">
-                        <span className="font-serif text-[24px] text-ink">{s.from}</span>
-                        {s.regularPrice && <span className="text-[13px] text-muted line-through">{s.regularPrice}</span>}
+                        <span className="font-serif text-[22px] sm:text-[24px] text-ink">{s.from}</span>
+                        {s.regularPrice && <span className="text-[12px] text-muted line-through">{s.regularPrice}</span>}
                       </div>
                     </div>
                     <a
                       href={whatsappLink(`Hi Nitya, I would like to book ${s.title} (${s.from}).`)}
                       target="_blank"
                       rel="noopener"
-                      className="link-arrow border-ink/30 text-ink hover:text-rose"
+                      className="link-arrow border-ink/30 text-ink hover:text-rose active:scale-95"
                     >
                       Book <span>→</span>
                     </a>
@@ -326,11 +346,11 @@ export function ServicesShowcase({ onHome = false }: { onHome?: boolean }) {
           </div>
         </div>
 
-        <div className="reveal mt-12 text-center">
-          <Link to="/menu" className="btn-rose">
+        <div className="reveal mt-10 sm:mt-12 text-center">
+          <Link to="/menu" className="btn-rose w-full sm:w-auto text-center active:scale-[0.98]">
             View full menu & rate cards
           </Link>
-          <p className="mt-3 text-[12px] text-muted">
+          <p className="mt-2.5 text-[11.5px] sm:text-[12px] text-muted">
             Professional products · Hygienic tools · Nail art extra: ₹30 to ₹50 / finger
           </p>
         </div>
@@ -344,10 +364,10 @@ export function ServicesShowcase({ onHome = false }: { onHome?: boolean }) {
 export function WorkStrip() {
   const picks = GALLERY.slice(0, 5)
   return (
-    <section className="bg-paper py-24 sm:py-32">
+    <section className="bg-paper py-14 sm:py-20 lg:py-32">
       <div className="container-lux">
         <SectionHead center eyebrow="Before & after the appointment" title="Our work speaks" />
-        <div className="mt-14 grid grid-cols-2 gap-3 sm:gap-4 md:grid-cols-5">
+        <div className="mt-10 sm:mt-14 grid grid-cols-2 gap-2.5 sm:gap-4 md:grid-cols-5">
           {picks.map((g, i) => (
             <Link
               key={g.src}
@@ -357,14 +377,14 @@ export function WorkStrip() {
               aria-label={`See more: ${g.alt}`}
             >
               <img src={g.src} alt={g.alt} loading="lazy" className="aspect-[3/4] w-full object-cover transition-transform duration-[1.2s] group-hover:scale-[1.06]" />
-              <span className="absolute right-3 bottom-3 grid h-8 w-8 place-items-center bg-white font-serif text-[15px] transition-colors group-hover:bg-rose group-hover:text-white">
+              <span className="absolute right-2.5 bottom-2.5 sm:right-3 sm:bottom-3 grid h-7 w-7 sm:h-8 sm:w-8 place-items-center bg-white font-serif text-[13px] sm:text-[15px] transition-colors group-hover:bg-rose group-hover:text-white">
                 {String(i + 1).padStart(2, '0')}
               </span>
             </Link>
           ))}
         </div>
-        <div className="reveal mt-12 text-center">
-          <Link to="/gallery" className="btn-rose">
+        <div className="reveal mt-8 sm:mt-12 text-center">
+          <Link to="/gallery" className="btn-rose w-full sm:w-auto text-center active:scale-[0.98]">
             View the gallery
           </Link>
         </div>
@@ -378,50 +398,50 @@ export function WorkStrip() {
 export function AcademyTeaser() {
   return (
     <section className="grid bg-ink text-white lg:grid-cols-2">
-      <div className="flex items-center px-5 py-20 sm:px-8 lg:px-12 lg:py-28 xl:pl-[max(3rem,calc((100vw-1320px)/2+3rem))]">
+      <div className="flex items-center px-4 py-14 sm:px-8 lg:px-12 lg:py-28 xl:pl-[max(3rem,calc((100vw-1320px)/2+3rem))]">
         <div className="max-w-[560px]">
-          <div className="reveal flex items-center gap-3">
-            <img src="/images/logo.jpg" alt="Nitya Nail Academy Logo" className="h-8 w-8 rounded-full border border-white/20 object-cover shadow-sm" />
+          <div className="reveal flex items-center gap-2.5">
+            <img src="/images/logo.jpg" alt="Nitya Nail Academy Logo" className="h-7 w-7 sm:h-8 sm:w-8 rounded-full border border-white/20 object-cover shadow-sm" />
             <p className="eyebrow !text-rose-light">Nitya Nail Academy</p>
           </div>
-          <span className="mt-3 inline-block bg-rose px-3.5 py-1 text-[11px] font-bold tracking-[0.16em] uppercase text-white shadow-sm">
+          <span className="mt-2.5 inline-block bg-rose px-3 py-0.5 text-[10px] font-bold tracking-[0.14em] uppercase text-white shadow-sm sm:text-[11px]">
             {COURSE.offerBadge}
           </span>
-          <h2 className="reveal display mt-4 text-[clamp(2.6rem,5.2vw,4.8rem)]" style={d(80)}>
+          <h2 className="reveal display mt-3 sm:mt-4 text-[clamp(2.4rem,5.2vw,4.8rem)]" style={d(80)}>
             {COURSE.name}
             <br />
             <span className="font-serif italic text-[#EDD28A]">अब सिर्फ {COURSE.price}/-</span>{' '}
             <span className="text-[0.45em] text-white/50 line-through">{COURSE.regular}/-</span>
           </h2>
-          <p className="mt-2 font-serif text-[19px] text-white/85 italic">
+          <p className="mt-2 font-serif text-[17px] sm:text-[19px] text-white/85 italic">
             "{COURSE.taglineHindi} {COURSE.sublineHindi}"
           </p>
-          <p className="reveal mt-5 text-[15.5px] leading-relaxed text-white/75" style={d(160)}>
+          <p className="reveal mt-4 sm:mt-5 text-[14.5px] sm:text-[15.5px] leading-relaxed text-white/75" style={d(160)}>
             Complete practical training on Gel, Acrylic, Korean & Polygel extensions, 40+ nail art techniques, animal prints, live model practice and a certified diploma — all practice products provided!
           </p>
-          <ul className="reveal mt-7 grid gap-2.5 sm:grid-cols-2" style={d(220)}>
+          <ul className="reveal mt-5 sm:mt-7 grid gap-2 sm:grid-cols-2" style={d(220)}>
             {COURSE.perks.map((p) => (
-              <li key={p} className="flex items-center gap-2.5 text-[13.5px] text-white/85">
+              <li key={p} className="flex items-center gap-2 text-[13px] sm:text-[13.5px] text-white/85">
                 <span className="text-[#EDD28A]">✦</span> {p}
               </li>
             ))}
           </ul>
-          <div className="reveal mt-9 flex flex-col gap-3 sm:flex-row" style={d(280)}>
-            <Link to="/academy" className="btn-rose">
+          <div className="reveal mt-7 sm:mt-9 flex flex-col gap-2.5 sm:flex-row" style={d(280)}>
+            <Link to="/academy" className="btn-rose w-full sm:w-auto text-center active:scale-[0.98]">
               View All 40+ Course Topics
             </Link>
             <a
               href={whatsappLink(`Hi Nitya, I want to enrol in the Basic to Professional nail course under the ${COURSE.price} Bumper Offer. Please share next batch details.`)}
               target="_blank"
               rel="noopener"
-              className="btn-outline-light"
+              className="btn-outline-light w-full sm:w-auto text-center active:scale-[0.98]"
             >
               Enrol at {COURSE.price} ↗
             </a>
           </div>
         </div>
       </div>
-      <div className="relative h-[60svh] overflow-hidden lg:h-auto">
+      <div className="relative h-[42svh] sm:h-[50svh] overflow-hidden lg:h-auto">
         <img
           src={COURSE.posterImage}
           alt="Nitya Nail Art Academy Basic to Professional Course Bumper Offer ₹8,500"
@@ -438,15 +458,15 @@ export function AcademyTeaser() {
 
 export function Pillars() {
   return (
-    <section className="border-y border-line bg-cream py-20 sm:py-28">
+    <section className="border-y border-line bg-cream py-14 sm:py-20 lg:py-28">
       <div className="container-lux">
         <SectionHead center eyebrow="Why clients keep returning" title="The Nitya difference" />
-        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-10 sm:mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {PILLARS.map((p, i) => (
-            <div key={p.no} className="reveal border border-line bg-paper p-8" style={d(i * 80)}>
-              <span className="font-serif text-[18px] text-rose">{p.no}</span>
-              <h3 className="mt-4 font-serif text-[28px] leading-tight">{p.title}</h3>
-              <p className="mt-3 text-[14.5px] leading-relaxed text-muted">{p.text}</p>
+            <div key={p.no} className="reveal border border-line bg-paper p-5 sm:p-8" style={d(i * 80)}>
+              <span className="font-serif text-[17px] sm:text-[18px] text-rose">{p.no}</span>
+              <h3 className="mt-2.5 sm:mt-4 font-serif text-[24px] sm:text-[28px] leading-tight">{p.title}</h3>
+              <p className="mt-2 sm:mt-3 text-[14px] sm:text-[14.5px] leading-relaxed text-muted">{p.text}</p>
             </div>
           ))}
         </div>
@@ -464,7 +484,7 @@ export function ReviewsSection({ full = false }: { full?: boolean }) {
   const list = full ? filtered : filtered.slice(0, 4)
 
   return (
-    <section className="bg-paper py-24 sm:py-32">
+    <section className="bg-paper py-14 sm:py-20 lg:py-32">
       <div className="container-lux">
         <div className="flex flex-col items-center text-center">
           <SectionHead
@@ -473,20 +493,20 @@ export function ReviewsSection({ full = false }: { full?: boolean }) {
             title="Real reviews from real appointments"
             text="Rated 4.5★ from 107 reviews on Google by salon clients and academy students."
           />
-          <div className="reveal mt-6">
+          <div className="reveal mt-5 sm:mt-6">
             <RatingChip />
           </div>
         </div>
 
         {full && (
-          <div className="reveal mt-10 flex flex-wrap justify-center gap-2">
+          <div className="no-scrollbar -mx-4 mt-7 flex gap-1.5 overflow-x-auto px-4 pb-2 sm:mx-0 sm:flex-wrap sm:justify-center">
             {tags.map((t) => (
               <button
                 key={t}
                 type="button"
                 onClick={() => setActiveTag(t)}
-                className={`border px-4 py-2 text-[12px] font-bold tracking-[0.1em] uppercase transition ${
-                  activeTag === t ? 'border-rose bg-rose text-white' : 'border-line bg-white text-muted hover:border-ink hover:text-ink'
+                className={`shrink-0 border px-3.5 py-1.5 text-[11px] font-bold tracking-[0.08em] uppercase transition active:scale-95 ${
+                  activeTag === t ? 'border-rose bg-rose text-white shadow-xs' : 'border-line bg-white text-muted hover:border-ink hover:text-ink'
                 }`}
               >
                 {t}
@@ -495,33 +515,33 @@ export function ReviewsSection({ full = false }: { full?: boolean }) {
           </div>
         )}
 
-        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-8 sm:mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {list.map((r, i) => (
-            <div key={r.name + i} className="reveal flex flex-col justify-between border border-line bg-white p-7" style={d((i % 4) * 70)}>
+            <div key={r.name + i} className="reveal flex flex-col justify-between border border-line bg-white p-5 sm:p-7 shadow-xs" style={d((i % 4) * 70)}>
               <div>
                 <Stars value={5} className="h-4 w-4 text-[#D4AF37]" />
-                <p className="mt-4 text-[14px] leading-relaxed text-ink/80 italic">"{r.text}"</p>
+                <p className="mt-3.5 text-[13.5px] sm:text-[14px] leading-relaxed text-ink/80 italic">"{r.text}"</p>
               </div>
-              <div className="mt-6 border-t border-line/70 pt-4">
-                <p className="font-serif text-[18px] text-ink">{r.name}</p>
-                <p className="text-[11.5px] font-semibold text-rose uppercase">{r.service}</p>
+              <div className="mt-5 border-t border-line/70 pt-3.5">
+                <p className="font-serif text-[17px] sm:text-[18px] text-ink">{r.name}</p>
+                <p className="text-[11px] font-semibold text-rose uppercase">{r.service}</p>
               </div>
             </div>
           ))}
         </div>
 
-        <div className="reveal mt-10 flex flex-col justify-center gap-3 sm:flex-row">
+        <div className="reveal mt-8 sm:mt-10 flex flex-col justify-center gap-2.5 sm:flex-row">
           {full ? (
             <>
-              <a href={BUSINESS.googleUrl} target="_blank" rel="noopener" className="btn-rose">
+              <a href={BUSINESS.googleUrl} target="_blank" rel="noopener" className="btn-rose w-full sm:w-auto text-center active:scale-[0.98]">
                 Read all on Google ↗
               </a>
-              <a href={BUSINESS.googleUrl} target="_blank" rel="noopener" className="btn-outline">
+              <a href={BUSINESS.googleUrl} target="_blank" rel="noopener" className="btn-outline w-full sm:w-auto text-center active:scale-[0.98]">
                 Write a review
               </a>
             </>
           ) : (
-            <Link to="/reviews" className="btn-outline">
+            <Link to="/reviews" className="btn-outline w-full sm:w-auto text-center active:scale-[0.98]">
               Read more reviews <ArrowRight />
             </Link>
           )}
@@ -537,7 +557,7 @@ export function MenuSection() {
   const [showPoster, setShowPoster] = useState<'none' | 'light' | 'dark'>('none')
 
   return (
-    <section className="bg-blush py-24 sm:py-32">
+    <section className="bg-blush py-14 sm:py-20 lg:py-32">
       <div className="container-lux">
         <SectionHead
           eyebrow="Published studio pricing"
@@ -550,46 +570,46 @@ export function MenuSection() {
         />
 
         {/* Wedding season trust bar */}
-        <div className="reveal mt-10 border border-line bg-white p-5 shadow-sm">
-          <div className="flex flex-wrap items-center justify-between gap-4">
-            <div className="flex items-center gap-3">
-              <span className="bg-rose px-3 py-1 text-[11px] font-bold tracking-[0.16em] text-white uppercase">
+        <div className="reveal mt-8 sm:mt-10 border border-line bg-white p-4 sm:p-5 shadow-xs">
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+            <div className="flex items-center gap-2.5">
+              <span className="bg-rose px-2.5 py-0.5 text-[10px] sm:text-[11px] font-bold tracking-[0.16em] text-white uppercase shrink-0">
                 Offer Active
               </span>
-              <p className="font-serif text-[20px] italic text-ink">
-                Wedding Season Special — Professional Products · Hygienic Tools · Skilled Artists
+              <p className="font-serif text-[17px] sm:text-[20px] italic text-ink">
+                Professional Products · Hygienic Tools · Skilled Artists
               </p>
             </div>
-            <div className="flex items-center gap-2">
+            <div>
               <button
                 type="button"
                 onClick={() => setShowPoster(showPoster === 'light' ? 'none' : 'light')}
-                className="border border-line px-3 py-1.5 text-[11px] font-bold tracking-[0.1em] text-ink uppercase hover:bg-cream"
+                className="w-full sm:w-auto border border-line px-3 py-1.5 text-center text-[11px] font-bold tracking-[0.08em] text-ink uppercase hover:bg-cream active:scale-95 transition"
               >
-                {showPoster === 'light' ? '✕ Hide Rate Card' : '📷 View Poster Rate Card'}
+                {showPoster !== 'none' ? '✕ Hide Rate Card' : '📷 View Poster Rate Card'}
               </button>
             </div>
           </div>
 
           {showPoster !== 'none' && (
-            <div className="mt-6 border-t border-line pt-6">
-              <div className="flex flex-wrap gap-2 pb-4">
+            <div className="mt-5 border-t border-line pt-5">
+              <div className="flex flex-wrap gap-2 pb-3.5">
                 <button
                   type="button"
                   onClick={() => setShowPoster('light')}
-                  className={`px-3 py-1 text-[11px] font-bold uppercase ${showPoster === 'light' ? 'bg-rose text-white' : 'bg-cream text-ink'}`}
+                  className={`px-3 py-1.5 text-[10.5px] font-bold uppercase transition active:scale-95 ${showPoster === 'light' ? 'bg-rose text-white' : 'bg-cream text-ink'}`}
                 >
-                  Wedding Special Poster (Cream)
+                  Poster (Cream)
                 </button>
                 <button
                   type="button"
                   onClick={() => setShowPoster('dark')}
-                  className={`px-3 py-1 text-[11px] font-bold uppercase ${showPoster === 'dark' ? 'bg-rose text-white' : 'bg-cream text-ink'}`}
+                  className={`px-3 py-1.5 text-[10.5px] font-bold uppercase transition active:scale-95 ${showPoster === 'dark' ? 'bg-rose text-white' : 'bg-cream text-ink'}`}
                 >
-                  Wedding Special Poster (Luxury Dark)
+                  Poster (Luxury Dark)
                 </button>
               </div>
-              <div className="mx-auto max-w-[500px] overflow-hidden border border-line shadow-lg">
+              <div className="mx-auto max-w-[500px] overflow-hidden border border-line shadow-md">
                 <img
                   src={showPoster === 'light' ? WEDDING_SEASON_SPECIAL.lightPoster : WEDDING_SEASON_SPECIAL.darkPoster}
                   alt="Nitya Nail Art Wedding Season Special Official Rate Card"
@@ -601,36 +621,36 @@ export function MenuSection() {
         </div>
 
         {/* Menu Cards */}
-        <div className="mt-12 grid gap-6 lg:grid-cols-3">
+        <div className="mt-8 sm:mt-12 grid gap-5 lg:grid-cols-3">
           {MENU.map((g, gi) => (
-            <div key={g.id} id={g.id} className="reveal flex flex-col border border-line bg-white shadow-sm" style={d(gi * 90)}>
-              <div className="border-b border-line p-7 sm:p-8">
+            <div key={g.id} id={g.id} className="reveal flex flex-col border border-line bg-white shadow-xs" style={d(gi * 90)}>
+              <div className="border-b border-line p-5 sm:p-8">
                 <div className="flex items-center justify-between">
                   <span className="font-serif text-[18px] text-rose">0{gi + 1}</span>
-                  <span className="text-[10.5px] font-bold tracking-[0.16em] text-muted uppercase">Special Rate</span>
+                  <span className="text-[10px] sm:text-[10.5px] font-bold tracking-[0.16em] text-muted uppercase">Special Rate</span>
                 </div>
-                <h3 className="mt-2 font-serif text-[32px] leading-tight text-ink">{g.title}</h3>
-                <p className="mt-1 text-[13.5px] text-muted">{g.intro}</p>
+                <h3 className="mt-1.5 sm:mt-2 font-serif text-[28px] sm:text-[32px] leading-tight text-ink">{g.title}</h3>
+                <p className="mt-1 text-[13px] text-muted">{g.intro}</p>
               </div>
 
-              <ul className="flex-1 divide-y divide-dashed divide-line px-7 py-2 sm:px-8">
+              <ul className="flex-1 divide-y divide-dashed divide-line px-4 sm:px-8 py-2">
                 {g.items.map((it) => (
-                  <li key={it.name} className="py-4">
+                  <li key={it.name} className="py-3.5 sm:py-4">
                     <div className="flex items-baseline justify-between gap-3">
                       <div className="min-w-0 flex-1">
-                        <p className="text-[15px] font-semibold text-ink">{it.name}</p>
+                        <p className="text-[14px] sm:text-[15px] font-semibold text-ink leading-snug">{it.name}</p>
                         {it.durability && (
-                          <span className="mt-1 inline-block bg-rose/10 px-2 py-0.5 text-[10.5px] font-bold text-rose-deep">
+                          <span className="mt-1 inline-block bg-rose/10 px-2 py-0.5 text-[10px] font-bold text-rose-deep">
                             {it.durability}
                           </span>
                         )}
-                        {it.note && <p className="mt-0.5 text-[12px] text-muted">{it.note}</p>}
-                        {it.extra && <p className="mt-0.5 text-[11.5px] font-semibold text-rose">{it.extra}</p>}
+                        {it.note && <p className="mt-0.5 text-[11.5px] sm:text-[12px] text-muted">{it.note}</p>}
+                        {it.extra && <p className="mt-0.5 text-[11px] sm:text-[11.5px] font-semibold text-rose">{it.extra}</p>}
                       </div>
-                      <div className="text-right">
-                        <span className="font-serif text-[24px] whitespace-nowrap text-rose">{it.price}</span>
+                      <div className="text-right shrink-0">
+                        <span className="font-serif text-[22px] sm:text-[24px] whitespace-nowrap text-rose">{it.price}</span>
                         {it.regularPrice && (
-                          <span className="block text-[12px] text-muted line-through">{it.regularPrice}</span>
+                          <span className="block text-[11.5px] sm:text-[12px] text-muted line-through">{it.regularPrice}</span>
                         )}
                       </div>
                     </div>
@@ -639,7 +659,7 @@ export function MenuSection() {
               </ul>
 
               {g.extra && (
-                <div className="border-t border-line bg-blush px-7 py-3.5 text-[11.5px] font-bold tracking-[0.12em] text-rose-deep uppercase sm:px-8">
+                <div className="border-t border-line bg-blush px-4 py-3 sm:px-8 sm:py-3.5 text-[11px] sm:text-[11.5px] font-bold tracking-[0.1em] text-rose-deep uppercase">
                   {g.extra}
                 </div>
               )}
@@ -647,7 +667,7 @@ export function MenuSection() {
           ))}
         </div>
 
-        <p className="reveal mt-8 text-center text-[13px] text-muted">
+        <p className="reveal mt-6 sm:mt-8 text-center text-[12px] sm:text-[13px] text-muted">
           Official pricing as published on Nitya Nail Art posters. Final details & custom art confirmed on WhatsApp before appointment.
         </p>
       </div>
@@ -662,47 +682,48 @@ export function CourseSection() {
 
   return (
     <>
-      <section className="bg-paper py-24 sm:py-32">
-        <div className="container-lux grid gap-12 lg:grid-cols-12">
+      <section className="bg-paper py-14 sm:py-20 lg:py-32">
+        <div className="container-lux grid gap-10 lg:grid-cols-12 lg:gap-12">
           {/* Sticky Enrollment Card */}
           <div className="lg:col-span-5">
             <div className="lg:sticky lg:top-28">
               <SectionHead eyebrow="Certified Diploma Course" title={COURSE.name} />
 
-              <div className="reveal mt-7 border border-line bg-white p-7 shadow-sm" style={d(150)}>
+              <div className="reveal mt-6 sm:mt-7 border border-line bg-white p-5 sm:p-7 shadow-xs" style={d(150)}>
                 {/* Official seal badge */}
-                <div className="flex items-center gap-3.5 border-b border-line pb-5">
-                  <img src="/images/logo.jpg" alt="Certified by Nitya Nail Academy" className="h-12 w-12 shrink-0 rounded-full object-cover shadow-sm ring-1 ring-ink/10" />
+                <div className="flex items-center gap-3 border-b border-line pb-4 sm:pb-5">
+                  <img src="/images/logo.jpg" alt="Certified by Nitya Nail Academy" className="h-11 w-11 sm:h-12 sm:w-12 shrink-0 rounded-full object-cover shadow-sm ring-1 ring-ink/10" />
                   <div>
-                    <p className="text-[10px] font-bold tracking-[0.2em] text-rose uppercase">Government / Salon Certified</p>
-                    <p className="font-serif text-[18px] leading-tight text-ink">Certified by Nitya Nail Academy</p>
+                    <p className="text-[9.5px] sm:text-[10px] font-bold tracking-[0.18em] text-rose uppercase">Government / Salon Certified</p>
+                    <p className="font-serif text-[17px] sm:text-[18px] leading-tight text-ink">Certified by Nitya Nail Academy</p>
                   </div>
                 </div>
 
                 {/* Bumper Offer Callout */}
-                <div className="mt-5 border-l-4 border-rose bg-blush p-4">
-                  <span className="inline-block bg-rose px-2.5 py-0.5 text-[10px] font-bold tracking-[0.16em] text-white uppercase">
+                <div className="mt-4 sm:mt-5 border-l-4 border-rose bg-blush p-3.5 sm:p-4">
+                  <span className="inline-block bg-rose px-2 py-0.5 text-[9.5px] font-bold tracking-[0.14em] text-white uppercase sm:text-[10px]">
                     {COURSE.offerBadge}
                   </span>
-                  <p className="mt-2 font-serif text-[17px] italic text-ink">
+                  <p className="mt-1.5 font-serif text-[16px] sm:text-[17px] italic text-ink">
                     "{COURSE.taglineHindi} {COURSE.sublineHindi}"
                   </p>
                 </div>
 
-                <div className="mt-5">
-                  <p className="text-[11px] font-bold tracking-[0.2em] text-muted uppercase">Course fee</p>
-                  <p className="mt-1 flex items-baseline gap-3">
-                    <span className="display text-[56px] text-rose">{COURSE.price}</span>
-                    <span className="text-[18px] text-muted line-through">{COURSE.regular}</span>
-                    <span className="rounded bg-rose/10 px-2 py-1 text-[11px] font-bold text-rose-deep">{COURSE.savings}</span>
+                <div className="mt-4 sm:mt-5">
+                  <p className="text-[10.5px] sm:text-[11px] font-bold tracking-[0.18em] text-muted uppercase">Course fee</p>
+                  <p className="mt-1 flex items-baseline gap-2.5 sm:gap-3">
+                    <span className="display text-[48px] sm:text-[56px] text-rose">{COURSE.price}</span>
+                    <span className="text-[16px] sm:text-[18px] text-muted line-through">{COURSE.regular}</span>
+                    <span className="rounded bg-rose/10 px-2 py-0.5 text-[10.5px] font-bold text-rose-deep">{COURSE.savings}</span>
                   </p>
-                  <p className="text-[12.5px] text-muted">Limited seats per batch · All practice products provided free of cost</p>
+                  <p className="text-[12px] text-muted">Limited seats per batch · All practice products provided free</p>
                 </div>
 
-                <ul className="mt-6 space-y-2.5 border-t border-line pt-6">
+                <ul className="mt-5 space-y-2 border-t border-line pt-5 sm:mt-6 sm:space-y-2.5 sm:pt-6">
                   {COURSE.perks.map((p) => (
-                    <li key={p} className="flex items-center gap-3 text-[14px] text-ink/90">
-                      <span className="grid h-5 w-5 place-items-center rounded-full bg-rose text-[10px] text-white">✓</span> {p}
+                    <li key={p} className="flex items-center gap-2.5 text-[13.5px] sm:text-[14px] text-ink/90">
+                      <span className="grid h-4 w-4 sm:h-5 sm:w-5 place-items-center rounded-full bg-rose text-[9px] sm:text-[10px] text-white shrink-0">✓</span>
+                      <span>{p}</span>
                     </li>
                   ))}
                 </ul>
@@ -711,7 +732,7 @@ export function CourseSection() {
                   href={whatsappLink(`Hi Nitya, I want to enrol in the Basic to Professional nail course under the ${COURSE.price} Bumper Offer. Please share syllabus and next batch start date.`)}
                   target="_blank"
                   rel="noopener"
-                  className="btn-rose mt-7 w-full"
+                  className="btn-rose mt-6 w-full text-center active:scale-[0.98]"
                 >
                   Enrol on WhatsApp @ {COURSE.price} ↗
                 </a>
@@ -719,13 +740,13 @@ export function CourseSection() {
                 <button
                   type="button"
                   onClick={() => setShowFlyer(!showFlyer)}
-                  className="mt-3.5 w-full border border-line py-2.5 text-center text-[11px] font-bold tracking-[0.14em] text-ink uppercase hover:bg-cream"
+                  className="mt-3 w-full border border-line py-2 text-center text-[10.5px] sm:text-[11px] font-bold tracking-[0.12em] text-ink uppercase hover:bg-cream active:scale-95 transition"
                 >
                   {showFlyer ? '✕ Hide Course Poster' : '📷 View Official Course Flyer'}
                 </button>
 
                 {showFlyer && (
-                  <div className="mt-4 border border-line p-2 shadow-inner">
+                  <div className="mt-3.5 border border-line p-1.5 shadow-inner">
                     <img
                       src={COURSE.posterImage}
                       alt="Nitya Nail Art & Academy Basic to Professional Course Official Poster"
@@ -739,30 +760,30 @@ export function CourseSection() {
 
           {/* Full 40+ Course Topics Syllabus (Right Column) */}
           <div className="lg:col-span-7">
-            <div className="flex items-center justify-between border-b border-line pb-4">
+            <div className="flex items-center justify-between border-b border-line pb-3.5 sm:pb-4">
               <div>
                 <p className="eyebrow">Comprehensive 40+ Topics</p>
-                <h3 className="display mt-1 text-[36px]">Course Curriculum</h3>
+                <h3 className="display mt-1 text-[28px] sm:text-[36px]">Course Curriculum</h3>
               </div>
-              <span className="bg-ink px-3 py-1 text-[11px] font-bold tracking-[0.16em] text-white uppercase">
+              <span className="bg-ink px-2.5 py-1 text-[10px] sm:text-[11px] font-bold tracking-[0.14em] text-white uppercase">
                 100% Practical
               </span>
             </div>
 
-            <div className="mt-8 space-y-6">
+            <div className="mt-6 space-y-4 sm:space-y-6">
               {COURSE.modules.map((m, i) => (
-                <div key={m.title} className="reveal border border-line bg-white p-7 sm:p-8 shadow-sm" style={d(i * 70)}>
-                  <div className="flex items-baseline justify-between gap-4 border-b border-line pb-4">
+                <div key={m.title} className="reveal border border-line bg-white p-5 sm:p-8 shadow-xs" style={d(i * 70)}>
+                  <div className="flex items-baseline justify-between gap-4 border-b border-line pb-3 sm:pb-4">
                     <div>
-                      <span className="text-[11px] font-bold tracking-[0.18em] text-rose uppercase">Module 0{i + 1}</span>
-                      <h4 className="font-serif text-[28px] leading-tight text-ink">{m.title}</h4>
-                      {m.description && <p className="mt-1 text-[13px] text-muted">{m.description}</p>}
+                      <span className="text-[10px] sm:text-[11px] font-bold tracking-[0.16em] text-rose uppercase">Module 0{i + 1}</span>
+                      <h4 className="font-serif text-[24px] sm:text-[28px] leading-tight text-ink">{m.title}</h4>
+                      {m.description && <p className="mt-0.5 text-[12.5px] text-muted">{m.description}</p>}
                     </div>
                   </div>
-                  <ul className="mt-5 grid gap-x-6 gap-y-2.5 sm:grid-cols-2">
+                  <ul className="mt-4 grid gap-x-6 gap-y-2 sm:grid-cols-2">
                     {m.items.map((it) => (
-                      <li key={it} className="flex items-start gap-2.5 text-[14px] text-ink/85">
-                        <span className="mt-[2px] text-[11px] text-rose">✦</span>
+                      <li key={it} className="flex items-start gap-2 text-[13px] sm:text-[14px] text-ink/85">
+                        <span className="mt-[2px] text-[10px] text-rose shrink-0">✦</span>
                         <span>{it}</span>
                       </li>
                     ))}
@@ -772,9 +793,9 @@ export function CourseSection() {
             </div>
 
             {/* In-person training guarantee card */}
-            <div className="reveal mt-8 border border-[#EDD28A]/40 bg-gradient-to-br from-cream via-paper to-blush p-7 sm:p-8">
-              <h4 className="font-serif text-[26px] text-ink">What's included in every enrolment?</h4>
-              <div className="mt-4 grid gap-3 sm:grid-cols-2 text-[14px] text-muted">
+            <div className="reveal mt-6 sm:mt-8 border border-[#EDD28A]/40 bg-gradient-to-br from-cream via-paper to-blush p-5 sm:p-8">
+              <h4 className="font-serif text-[22px] sm:text-[26px] text-ink">What's included in every enrolment?</h4>
+              <div className="mt-3.5 grid gap-2.5 sm:grid-cols-2 text-[13px] sm:text-[14px] text-muted">
                 <p className="flex items-center gap-2"><span className="text-rose">✓</span> Complete practice products provided</p>
                 <p className="flex items-center gap-2"><span className="text-rose">✓</span> Live model hands-on sessions</p>
                 <p className="flex items-center gap-2"><span className="text-rose">✓</span> In-class written notes & formulas</p>
@@ -786,7 +807,7 @@ export function CourseSection() {
                 href={whatsappLink(`Hi Nitya, I have questions regarding the Basic to Professional nail course (@ ${COURSE.price}). Please help me with batch timings.`)}
                 target="_blank"
                 rel="noopener"
-                className="btn-rose mt-6 inline-flex"
+                className="btn-rose mt-5 w-full sm:w-auto text-center inline-flex active:scale-[0.98]"
               >
                 Inquire on WhatsApp ↗
               </a>
@@ -811,8 +832,8 @@ export function ContactSection() {
   ]
 
   return (
-    <section className="bg-paper py-24 sm:py-32">
-      <div className="container-lux grid gap-14 lg:grid-cols-12 lg:gap-16">
+    <section className="bg-paper py-14 sm:py-20 lg:py-32">
+      <div className="container-lux grid gap-10 lg:grid-cols-12 lg:gap-16">
         <div className="lg:col-span-5">
           <SectionHead
             eyebrow="Visit the studio"
@@ -823,16 +844,16 @@ export function ContactSection() {
             }
             text="Walk in or book ahead on WhatsApp — send your inspiration picture and we'll have everything ready."
           />
-          <ul className="mt-10 divide-y divide-line border-y border-line">
+          <ul className="mt-7 sm:mt-10 divide-y divide-line border-y border-line">
             {rows.map((r, i) => (
-              <li key={r.label} className="reveal flex items-start gap-5 py-5" style={d(i * 60)}>
-                <span className="mt-0.5 grid h-11 w-11 shrink-0 place-items-center bg-blush text-rose">{r.icon}</span>
+              <li key={r.label} className="reveal flex items-start gap-4 sm:gap-5 py-4 sm:py-5" style={d(i * 60)}>
+                <span className="mt-0.5 grid h-10 w-10 sm:h-11 sm:w-11 shrink-0 place-items-center bg-blush text-rose">{r.icon}</span>
                 <div className="min-w-0 flex-1">
-                  <p className="text-[10.5px] font-bold tracking-[0.2em] text-rose uppercase">{r.label}</p>
-                  <p className="mt-1 text-[15px] leading-relaxed break-words">{r.body}</p>
+                  <p className="text-[10px] sm:text-[10.5px] font-bold tracking-[0.18em] text-rose uppercase">{r.label}</p>
+                  <p className="mt-0.5 sm:mt-1 text-[14px] sm:text-[15px] leading-relaxed break-words">{r.body}</p>
                 </div>
                 {r.href && (
-                  <a href={r.href} target={r.href.startsWith('tel:') ? undefined : '_blank'} rel="noopener" className="link-arrow mt-3 hidden shrink-0 border-ink/30 text-ink hover:text-rose sm:inline-flex">
+                  <a href={r.href} target={r.href.startsWith('tel:') ? undefined : '_blank'} rel="noopener" className="link-arrow mt-2 sm:mt-3 hidden shrink-0 border-ink/30 text-ink hover:text-rose sm:inline-flex active:scale-95">
                     {r.cta} <span>→</span>
                   </a>
                 )}
@@ -841,22 +862,22 @@ export function ContactSection() {
           </ul>
         </div>
         <div className="reveal lg:col-span-7" style={d(140)}>
-          <div className="relative h-full min-h-[440px] overflow-hidden border border-line bg-cream">
+          <div className="relative h-[340px] sm:h-[440px] lg:h-full overflow-hidden border border-line bg-cream">
             <iframe title="Nitya Nail Art & Academy on Google Maps" src={BUSINESS.mapEmbed} className="absolute inset-0 h-full w-full" loading="lazy" referrerPolicy="no-referrer-when-downgrade" />
             <a
               href={BUSINESS.directionsUrl}
               target="_blank"
               rel="noopener"
-              className="group absolute right-5 bottom-5 left-5 flex items-center justify-between gap-4 bg-ink px-6 py-4 text-white shadow-2xl sm:right-auto"
+              className="group absolute right-3 bottom-3 left-3 sm:right-5 sm:bottom-5 sm:left-5 flex items-center justify-between gap-3 sm:gap-4 bg-ink px-4 py-3 sm:px-6 sm:py-4 text-white shadow-2xl sm:right-auto active:scale-[0.98] transition"
             >
-              <div className="flex items-center gap-3.5">
-                <img src="/images/logo.jpg" alt="Nitya Nail Art" className="h-11 w-11 shrink-0 rounded-full border border-white/20 object-cover shadow-md transition-transform duration-300 group-hover:scale-105" />
-                <span>
-                  <span className="block font-serif text-[24px] leading-tight">Nitya Nail Art & Academy</span>
-                  <span className="text-[12px] text-white/65">19 GM & 247 FH, Scheme No. 54 · Opposite Meghdoot Garden</span>
-                </span>
+              <div className="flex items-center gap-2.5 sm:gap-3.5">
+                <img src="/images/logo.jpg" alt="Nitya Nail Art" className="h-9 w-9 sm:h-11 sm:w-11 shrink-0 rounded-full border border-white/20 object-cover shadow-md transition-transform duration-300 group-hover:scale-105" />
+                <div>
+                  <span className="block font-serif text-[20px] sm:text-[24px] leading-tight">Nitya Nail Art & Academy</span>
+                  <span className="text-[11px] sm:text-[12px] text-white/65">Scheme No. 54 · Opposite Meghdoot Garden</span>
+                </div>
               </div>
-              <span className="grid h-10 w-10 shrink-0 place-items-center bg-rose transition-colors duration-300 group-hover:bg-rose-deep">
+              <span className="grid h-8 w-8 sm:h-10 sm:w-10 shrink-0 place-items-center bg-rose transition-colors duration-300 group-hover:bg-rose-deep">
                 <ArrowRight />
               </span>
             </a>
@@ -872,21 +893,21 @@ export function ContactSection() {
 export function InstagramStrip() {
   const pics = GALLERY.slice(0, 6)
   return (
-    <section className="bg-paper pt-24 pb-10 sm:pt-28">
+    <section className="bg-paper pt-14 pb-8 sm:pt-28 sm:pb-10">
       <div className="container-lux text-center">
         <SectionHead center eyebrow={`@${BUSINESS.instagram.handle}`} title="Follow our latest sets" />
-        <div className="mt-12 grid grid-cols-3 gap-2 sm:gap-3 lg:grid-cols-6">
+        <div className="mt-8 sm:mt-12 grid grid-cols-3 gap-1.5 sm:gap-3 lg:grid-cols-6">
           {pics.map((g, i) => (
             <a key={g.src} href={BUSINESS.instagram.url} target="_blank" rel="noopener" className="reveal group relative block aspect-square overflow-hidden" style={d(i * 50)} aria-label="View on Instagram">
               <img src={g.src} alt="" loading="lazy" className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" />
               <span className="absolute inset-0 grid place-items-center bg-rose/0 text-white opacity-0 transition-all duration-500 group-hover:bg-rose/50 group-hover:opacity-100">
-                <InstagramIcon className="h-7 w-7" />
+                <InstagramIcon className="h-6 w-6 sm:h-7 sm:w-7" />
               </span>
             </a>
           ))}
         </div>
-        <a href={BUSINESS.instagram.url} target="_blank" rel="noopener" className="btn-outline reveal mt-10">
-          <InstagramIcon className="h-4 w-4" /> Follow on Instagram
+        <a href={BUSINESS.instagram.url} target="_blank" rel="noopener" className="btn-outline reveal mt-7 sm:mt-10 w-full sm:w-auto text-center active:scale-[0.98]">
+          <InstagramIcon className="h-4 w-4" /> Follow on Instagram ↗
         </a>
       </div>
     </section>
