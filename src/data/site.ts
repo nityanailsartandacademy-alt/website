@@ -53,7 +53,7 @@ export const BUSINESS_VERTICALS = {
     subtitle: 'Professional Nail Extensions, Gel, Acrylic, Bridal Nails & Custom 3D Art',
     description:
       'Indore’s premier nail studio specializing in long-lasting gel & acrylic extensions, Korean glass nails, bridal sets, and hand-painted nail art. Starting at just ₹249/-.',
-    image: '/images/real-service-01.jpeg',
+    image: '/images/designs/design-07-burgundy-french-floral.jpg',
     href: '/services',
     cta: 'Explore Nail Art Services',
     highlights: ['Temporary Extensions from ₹249', 'Bridal Special Cat Eye @ ₹2,100', '40+ Custom Art Styles'],

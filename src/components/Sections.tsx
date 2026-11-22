@@ -58,8 +58,8 @@ export function HomeHero() {
       </div>
       <div className="relative h-[45svh] sm:h-[55svh] overflow-hidden lg:h-auto">
         <img
-          src="/images/real-service-01.jpeg"
-          alt="Luxury nail art extensions and student training at Nitya Nail Art & Academy, Indore"
+          src="/images/real-nude-gold-contour.jpg"
+          alt="Luxury nude pink and gold contour nail extensions at Nitya Nail Art, Indore"
           className="hero-img absolute inset-0 h-full w-full object-cover object-[center_35%]"
           fetchPriority="high"
         />
@@ -153,9 +153,9 @@ export function DualVerticalsSection() {
               </p>
               <div className="relative mt-5 aspect-[16/10] overflow-hidden border border-line">
                 <img
-                  src="/images/real-service-01.jpeg"
-                  alt="Professional nail art services and extensions at Nitya Nail Art, Indore"
-                  className="h-full w-full object-cover transition duration-700 group-hover:scale-105"
+                  src="/images/designs/design-07-burgundy-french-floral.jpg"
+                  alt="Handcrafted floral nail art and extensions at Nitya Nail Art, Indore"
+                  className="h-full w-full object-cover object-[center_35%] transition duration-700 group-hover:scale-105"
                   loading="lazy"
                 />
                 <div className="absolute top-2.5 right-2.5 bg-ink/90 px-2.5 py-1 text-[10px] font-bold text-white uppercase tracking-wider backdrop-blur-xs">
