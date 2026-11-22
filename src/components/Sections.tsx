@@ -1,9 +1,11 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import {
+  ACADEMY_GALLERY,
   BRIDAL_PACKAGE,
   BUSINESS,
   COURSE,
+  FEATURED_DESIGNS,
   GALLERY,
   MENU,
   PILLARS,
@@ -23,24 +25,25 @@ const d = (ms: number) => ({ ['--d' as string]: `${ms}ms` }) as React.CSSPropert
 
 export function HomeHero() {
   return (
-    <section className="relative grid overflow-hidden bg-ink pt-[70px] text-white sm:pt-[76px] lg:min-h-[100svh] lg:grid-cols-[1fr_0.9fr]">
-      <div className="relative z-10 flex items-center px-4 pt-8 pb-10 sm:px-8 lg:px-12 lg:py-24 xl:pl-[max(3rem,calc((100vw-1320px)/2+3rem))]">
-        <div className="max-w-[620px]">
-          <div className="reveal inline-flex items-center gap-2 border border-[#EDD28A]/30 bg-[#EDD28A]/10 px-3 py-1 text-[10.5px] font-bold tracking-[0.16em] text-[#EDD28A] uppercase sm:text-[11px]">
-            <span>✨</span> Wedding Season Special Live
+    <section className="relative grid overflow-hidden bg-ink pt-[70px] text-white sm:pt-[76px] lg:min-h-[100svh] lg:grid-cols-[1.1fr_0.9fr]">
+      <div className="relative z-10 flex items-center px-4 pt-8 pb-10 sm:px-8 lg:px-12 lg:py-20 xl:pl-[max(3rem,calc((100vw-1320px)/2+3rem))]">
+        <div className="max-w-[640px]">
+          <div className="reveal inline-flex items-center gap-2 border border-[#EDD28A]/40 bg-[#EDD28A]/10 px-3 py-1 text-[10px] font-bold tracking-[0.16em] text-[#EDD28A] uppercase sm:text-[11px]">
+            <span>✨</span> Studio Services & Certified Academy · Vijay Nagar
           </div>
-          <h1 className="reveal display mt-4 sm:mt-5 text-[clamp(2.4rem,6.8vw,6.4rem)]" style={d(100)}>
-            <span className="block text-[0.55em] leading-tight">Glamour at your</span> Fingertips
+          <h1 className="reveal display mt-4 sm:mt-5 text-[clamp(2.3rem,6.2vw,5.6rem)] leading-[1.05]" style={d(100)}>
+            <span className="block text-[0.45em] sm:text-[0.48em] font-serif italic text-rose-light">Indore's Premier Nail Destination</span>
+            Nail Studio & Academy
           </h1>
-          <p className="reveal mt-4 sm:mt-6 max-w-[500px] text-[15px] sm:text-[16.5px] leading-relaxed text-white/75" style={d(200)}>
-            Wedding Season Special: Extensions from ₹249, Bridal Cat Eye Package @ ₹2,100, and certified Basic to Professional nail course @ ₹8,500 — in Vijay Nagar, Indore.
+          <p className="reveal mt-4 sm:mt-6 max-w-[540px] text-[14.5px] sm:text-[16px] leading-relaxed text-white/80" style={d(200)}>
+            Two distinct verticals under one roof: Luxury <strong>Nail Art Services</strong> (extensions from ₹249, bridal sets @ ₹2,100) and an accredited <strong>Nail Art Academy</strong> (certified basic to pro course @ ₹8,500 with 100% practical training).
           </p>
-          <div className="reveal mt-6 sm:mt-8 flex flex-col gap-2.5 sm:flex-row" style={d(300)}>
-            <a href={whatsappLink()} target="_blank" rel="noopener" className="btn-rose w-full sm:w-auto text-center active:scale-[0.98]">
-              Book appointment ↗
-            </a>
-            <Link to="/menu" className="btn-outline-light w-full sm:w-auto text-center active:scale-[0.98]">
-              View offers & menu
+          <div className="reveal mt-6 sm:mt-8 flex flex-col gap-3 sm:flex-row" style={d(300)}>
+            <Link to="/services" className="btn-rose w-full sm:w-auto text-center active:scale-[0.98] font-bold">
+              • Explore Nail Art Services
+            </Link>
+            <Link to="/academy" className="btn-outline-light w-full sm:w-auto text-center active:scale-[0.98] font-bold">
+              • Explore Nail Art Academy
             </Link>
           </div>
           <div className="reveal mt-8 sm:mt-10 flex flex-wrap items-center gap-x-5 gap-y-3 border-t border-white/10 pt-5 sm:pt-6" style={d(400)}>
@@ -49,21 +52,31 @@ export function HomeHero() {
               <img src="/images/logo.jpg" alt="Nitya Nail Art" className="h-6 w-6 rounded-full border border-white/25 object-cover" />
               <span className="text-[11.5px] sm:text-[12px] font-semibold tracking-[0.06em] text-white/60">Women-owned studio</span>
             </div>
+            <span className="text-[11.5px] sm:text-[12px] text-[#EDD28A] font-medium">✦ 100% Practical Academy</span>
           </div>
         </div>
       </div>
-      <div className="relative h-[42svh] sm:h-[50svh] overflow-hidden lg:h-auto">
+      <div className="relative h-[45svh] sm:h-[55svh] overflow-hidden lg:h-auto">
         <img
-          src="/images/real-nude-gold-contour.jpg"
-          alt="Nude pink almond nail extensions with gold contour line art by Nitya Nail Art, Indore"
+          src="/images/real-service-01.jpeg"
+          alt="Luxury nail art extensions and student training at Nitya Nail Art & Academy, Indore"
           className="hero-img absolute inset-0 h-full w-full object-cover object-[center_35%]"
           fetchPriority="high"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-ink/60 via-transparent to-transparent lg:from-ink/80" />
-        <div className="absolute bottom-3 left-3 sm:bottom-8 sm:left-8 border-l-4 border-rose bg-paper/95 px-4 py-3 sm:px-5 sm:py-4 text-ink shadow-2xl backdrop-blur-xs">
-          <p className="text-[9.5px] sm:text-[10px] font-bold tracking-[0.2em] text-rose uppercase">Wedding Season Special</p>
-          <p className="display text-[32px] sm:text-[38px] leading-tight">From ₹249</p>
-          <p className="text-[10.5px] sm:text-[11px] font-semibold text-muted">Bridal Package @ ₹2,100</p>
+        <div className="absolute inset-0 bg-gradient-to-r from-ink/70 via-ink/20 to-transparent lg:from-ink/80" />
+        
+        {/* Floating Vertical 1 badge */}
+        <div className="absolute top-4 right-4 sm:top-8 sm:right-8 border-l-4 border-rose bg-paper/95 px-3.5 py-2.5 sm:px-4 sm:py-3 text-ink shadow-2xl backdrop-blur-xs">
+          <p className="text-[9px] sm:text-[9.5px] font-bold tracking-[0.18em] text-rose uppercase">Vertical 01 · Services</p>
+          <p className="font-serif text-[18px] sm:text-[22px] font-bold leading-tight">From ₹249/-</p>
+          <p className="text-[10px] sm:text-[11px] text-muted">Bridal Package @ ₹2,100</p>
+        </div>
+
+        {/* Floating Vertical 2 badge */}
+        <div className="absolute bottom-4 left-4 sm:bottom-8 sm:left-8 border-l-4 border-[#D4AF37] bg-ink/95 px-3.5 py-2.5 sm:px-4 sm:py-3 text-white shadow-2xl backdrop-blur-xs">
+          <p className="text-[9px] sm:text-[9.5px] font-bold tracking-[0.18em] text-[#EDD28A] uppercase">Vertical 02 · Academy</p>
+          <p className="font-serif text-[18px] sm:text-[22px] font-bold leading-tight text-[#EDD28A]">Offer @ ₹8,500/-</p>
+          <p className="text-[10px] sm:text-[11px] text-white/70">100% Practical + Certificate</p>
         </div>
       </div>
     </section>
@@ -96,6 +109,356 @@ export function Marquee() {
         ))}
       </div>
     </div>
+  )
+}
+
+/* ---------------- Two Core Business Verticals (Services & Academy) ---------------- */
+
+export function DualVerticalsSection() {
+  return (
+    <section id="verticals" className="bg-paper py-14 sm:py-20 lg:py-28">
+      <div className="container-lux">
+        <div className="mx-auto max-w-2xl text-center">
+          <div className="inline-flex items-center gap-2 border border-rose/20 bg-rose/5 px-3 py-1 text-[10.5px] font-bold tracking-[0.16em] text-rose uppercase sm:text-[11px]">
+            Two Core Business Verticals
+          </div>
+          <h2 className="display mt-3 sm:mt-4 text-[clamp(2.2rem,5vw,4.5rem)] text-ink">
+            Craftsmanship & <em className="text-rose">Education.</em>
+          </h2>
+          <p className="mt-3 text-[15px] sm:text-[16px] leading-relaxed text-muted">
+            We are both a <strong>Premium Nail Studio</strong> and a <strong>Professional Nail Training Academy</strong> in Vijay Nagar, Indore. Choose your journey below:
+          </p>
+        </div>
+
+        <div className="mt-10 sm:mt-16 grid gap-8 lg:grid-cols-2 lg:gap-10">
+          {/* Vertical 1: Nail Art Services */}
+          <div
+            id="services-vertical"
+            className="group relative flex flex-col justify-between overflow-hidden border border-line bg-cream p-6 sm:p-9 shadow-sm transition hover:shadow-xl hover:border-rose/50"
+          >
+            <div>
+              <div className="flex items-center justify-between gap-3">
+                <span className="inline-block bg-rose px-3 py-1 text-[10px] font-bold tracking-[0.18em] text-white uppercase sm:text-[10.5px]">
+                  Vertical 01 · Studio
+                </span>
+                <span className="font-serif text-[13px] sm:text-[14px] text-muted italic">From ₹249/-</span>
+              </div>
+              <h3 className="display mt-4 text-[28px] sm:text-[36px] text-ink">
+                Nail Art Services
+              </h3>
+              <p className="mt-1 font-serif text-[15px] sm:text-[16px] italic text-rose font-medium">
+                Professional Nail Extensions, Gel, Acrylic, Bridal Nails, Nail Art & Premium Nail Treatments.
+              </p>
+              <div className="relative mt-5 aspect-[16/10] overflow-hidden border border-line">
+                <img
+                  src="/images/real-service-01.jpeg"
+                  alt="Professional nail art services and extensions at Nitya Nail Art, Indore"
+                  className="h-full w-full object-cover transition duration-700 group-hover:scale-105"
+                  loading="lazy"
+                />
+                <div className="absolute top-2.5 right-2.5 bg-ink/90 px-2.5 py-1 text-[10px] font-bold text-white uppercase tracking-wider backdrop-blur-xs">
+                  Wedding Season Special
+                </div>
+              </div>
+              <p className="mt-5 text-[14.5px] sm:text-[15px] leading-relaxed text-muted">
+                Indore’s premier destination for flawless extensions, overlays, and bespoke bridal nail artistry. Every set is tailored to your natural nail health and lifestyle.
+              </p>
+              <ul className="mt-5 space-y-2 border-t border-line/60 pt-5 text-[13.5px] sm:text-[14px] text-ink/85">
+                <li className="flex items-start gap-2">
+                  <span className="text-rose font-bold">✓</span>
+                  <span><strong>Temporary Nail Extensions</strong> starting at just ₹249/- (lasts 10 days)</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-rose font-bold">✓</span>
+                  <span><strong>Korean Gel Extensions</strong> @ ₹599 & <strong>Gel Extensions</strong> @ ₹699</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-rose font-bold">✓</span>
+                  <span><strong>Acrylic Nail Extensions</strong> @ ₹1,099 (flawless 1-month wear)</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-rose font-bold">✓</span>
+                  <span><strong>Signature Bridal Package @ ₹2,100</strong> (Cat Eye Hands + Toes)</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-rose font-bold">✓</span>
+                  <span>Gel & Acrylic Overlays with Free Polishing from ₹699</span>
+                </li>
+              </ul>
+            </div>
+            <div className="mt-8 pt-6 border-t border-line flex flex-col sm:flex-row gap-3">
+              <Link to="/services" className="btn-rose flex-1 text-center font-bold active:scale-[0.98]">
+                • Explore Nail Art Services
+              </Link>
+              <a
+                href={whatsappLink('Hi Nitya Nail Art, I would like to book a nail service appointment.')}
+                target="_blank"
+                rel="noopener"
+                className="btn-outline text-center text-xs sm:px-4 active:scale-[0.98]"
+              >
+                Book Appointment ↗
+              </a>
+            </div>
+          </div>
+
+          {/* Vertical 2: Nail Art Academy */}
+          <div
+            id="academy-vertical"
+            className="group relative flex flex-col justify-between overflow-hidden border border-line bg-cream p-6 sm:p-9 shadow-sm transition hover:shadow-xl hover:border-[#D4AF37]"
+          >
+            <div>
+              <div className="flex items-center justify-between gap-3">
+                <span className="inline-block bg-[#2D0D19] border border-[#EDD28A]/40 px-3 py-1 text-[10px] font-bold tracking-[0.18em] text-[#EDD28A] uppercase sm:text-[10.5px]">
+                  Vertical 02 · Academy
+                </span>
+                <span className="inline-block bg-rose/10 text-rose font-bold text-[12px] px-2.5 py-0.5 rounded-full">
+                  Bumper Offer @ ₹8,500
+                </span>
+              </div>
+              <h3 className="display mt-4 text-[28px] sm:text-[36px] text-ink">
+                Nail Art Academy
+              </h3>
+              <p className="mt-1 font-serif text-[15px] sm:text-[16px] italic text-[#B8860B] font-medium">
+                Basic to Professional Nail Courses, Practical Training, Student Certification & Professional Skill Development.
+              </p>
+              <div className="relative mt-5 aspect-[16/10] overflow-hidden border border-line">
+                <img
+                  src="/images/academy/academy-01.jpeg"
+                  alt="Student receiving certificate at Nitya Nail Art Academy, Indore"
+                  className="h-full w-full object-cover transition duration-700 group-hover:scale-105"
+                  loading="lazy"
+                />
+                <div className="absolute top-2.5 right-2.5 bg-ink/90 px-2.5 py-1 text-[10px] font-bold text-[#EDD28A] uppercase tracking-wider backdrop-blur-xs">
+                  Official Certification
+                </div>
+              </div>
+              <p className="mt-5 text-[14.5px] sm:text-[15px] leading-relaxed text-muted">
+                Indore’s leading hands-on training academy. Master 40+ techniques, client handling, salon hygiene, and portfolio building with complete practice products provided.
+              </p>
+              <ul className="mt-5 space-y-2 border-t border-line/60 pt-5 text-[13.5px] sm:text-[14px] text-ink/85">
+                <li className="flex items-start gap-2">
+                  <span className="text-[#B8860B] font-bold">✓</span>
+                  <span><strong>100% Practical Training</strong> on live models & dummy fingers</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-[#B8860B] font-bold">✓</span>
+                  <span><strong>All Practice Products Provided</strong> in class (Zero extra material cost)</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-[#B8860B] font-bold">✓</span>
+                  <span><strong>Certificate Provided</strong> upon course completion for salon employment</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-[#B8860B] font-bold">✓</span>
+                  <span><strong>In-Class Notes & Pricing Structure</strong> (How to price freelance & salon sets)</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-[#B8860B] font-bold">✓</span>
+                  <span><strong>Lifetime Mentor Support</strong> & doubt resolution after completion</span>
+                </li>
+              </ul>
+            </div>
+            <div className="mt-8 pt-6 border-t border-line flex flex-col sm:flex-row gap-3">
+              <Link to="/academy" className="btn-rose flex-1 text-center font-bold active:scale-[0.98]">
+                • Explore Nail Art Academy
+              </Link>
+              <a
+                href={whatsappLink('Hi Nitya Nail Art, I want to inquire about the Basic to Professional Nail Academy course (@ ₹8,500 bumper offer).')}
+                target="_blank"
+                rel="noopener"
+                className="btn-outline text-center text-xs sm:px-4 active:scale-[0.98]"
+              >
+                Enroll on WhatsApp ↗
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}
+
+/* ---------------- Featured Designs with Exact Tiered Pricing ---------------- */
+
+export function FeaturedDesignsSection() {
+  return (
+    <section id="trending-designs" className="bg-cream py-14 sm:py-20 lg:py-28">
+      <div className="container-lux">
+        <div className="mx-auto max-w-2xl text-center">
+          <div className="inline-flex items-center gap-2 border border-rose/20 bg-rose/5 px-3 py-1 text-[10.5px] font-bold tracking-[0.16em] text-rose uppercase sm:text-[11px]">
+            Trending Client Designs
+          </div>
+          <h2 className="display mt-3 sm:mt-4 text-[clamp(2.2rem,5vw,4.5rem)] text-ink">
+            Popular Sets with <em className="text-rose">Tiered Pricing.</em>
+          </h2>
+          <p className="mt-3 text-[15px] sm:text-[16px] leading-relaxed text-muted">
+            Send us your inspiration! Every signature design can be crafted in your preferred extension style.
+          </p>
+          <div className="mt-4 inline-flex items-center gap-2 rounded-full border border-rose/30 bg-rose/10 px-4 py-1.5 text-[12.5px] font-bold text-rose-deep sm:text-[13px]">
+            <span>✨</span> Temporary extension starting at just ₹249/-
+          </div>
+        </div>
+
+        <div className="mt-10 sm:mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {FEATURED_DESIGNS.map((d) => (
+            <div
+              key={d.id}
+              className="group flex flex-col justify-between overflow-hidden border border-line bg-paper shadow-sm transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
+            >
+              <div>
+                <div className="relative aspect-square overflow-hidden bg-ink/5">
+                  <img
+                    src={d.image}
+                    alt={d.title}
+                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    loading="lazy"
+                  />
+                  {d.badge && (
+                    <span className="absolute top-3 left-3 bg-rose px-2.5 py-1 text-[10px] font-bold tracking-wider text-white uppercase shadow-sm">
+                      {d.badge}
+                    </span>
+                  )}
+                </div>
+                <div className="p-4 sm:p-5">
+                  <h3 className="font-serif text-[18px] sm:text-[20px] font-semibold text-ink leading-snug">
+                    {d.title}
+                  </h3>
+                  <p className="mt-1 text-[12px] sm:text-[12.5px] text-muted line-clamp-2">
+                    {d.style}
+                  </p>
+
+                  <div className="mt-4 rounded-md border border-line bg-cream/70 p-3">
+                    <p className="text-[10px] font-bold tracking-[0.15em] text-rose uppercase mb-2">
+                      Tiered Pricing
+                    </p>
+                    <div className="space-y-1.5 text-[12px] sm:text-[12.5px]">
+                      <div className="flex justify-between border-b border-line/40 pb-1">
+                        <span className="text-muted">Temporary:</span>
+                        <span className="font-bold text-ink">{d.prices.temporary}</span>
+                      </div>
+                      <div className="flex justify-between border-b border-line/40 pb-1">
+                        <span className="text-muted">Korean:</span>
+                        <span className="font-bold text-ink">{d.prices.korean}</span>
+                      </div>
+                      <div className="flex justify-between border-b border-line/40 pb-1">
+                        <span className="text-muted">Soft Gel:</span>
+                        <span className="font-bold text-ink">{d.prices.softGel}</span>
+                      </div>
+                      <div className="flex justify-between border-b border-line/40 pb-1">
+                        <span className="text-muted">Gel:</span>
+                        <span className="font-bold text-ink">{d.prices.gel}</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span className="text-muted">Acrylic:</span>
+                        <span className="font-bold text-rose-deep">{d.prices.acrylic}</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="p-4 sm:p-5 pt-0">
+                <a
+                  href={whatsappLink(`Hi Nitya Nail Art, I love the "${d.title}" design! Please book an appointment for me.`)}
+                  target="_blank"
+                  rel="noopener"
+                  className="btn-rose w-full text-center text-[12.5px] py-2.5 active:scale-[0.98] block"
+                >
+                  Book this design ↗
+                </a>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
+
+/* ---------------- Academy Certificates & Real Training Showcase ---------------- */
+
+export function AcademyCertificatesShowcase() {
+  return (
+    <section id="academy-certificates" className="bg-paper py-14 sm:py-20 lg:py-28">
+      <div className="container-lux">
+        <div className="grid items-end justify-between gap-6 sm:grid-cols-12">
+          <div className="sm:col-span-8">
+            <div className="inline-flex items-center gap-2 border border-[#EDD28A]/40 bg-[#EDD28A]/10 px-3 py-1 text-[10.5px] font-bold tracking-[0.16em] text-[#B8860B] uppercase sm:text-[11px]">
+              🎓 Real Students · Real Certificates
+            </div>
+            <h2 className="display mt-3 sm:mt-4 text-[clamp(2.2rem,5vw,4.5rem)] text-ink">
+              Proud Academy Graduates & <em className="text-rose">Practical Training.</em>
+            </h2>
+            <p className="mt-3 max-w-2xl text-[15px] sm:text-[16px] leading-relaxed text-muted">
+              See our students in action! From hands-on live model prep to official certificate award ceremonies, our graduates step out as job-ready and freelance-ready professional nail artists.
+            </p>
+          </div>
+          <div className="sm:col-span-4 sm:text-right">
+            <Link to="/academy" className="btn-outline w-full sm:w-auto inline-flex text-center justify-center">
+              View Course Syllabus <ArrowRight />
+            </Link>
+          </div>
+        </div>
+
+        {/* 8 Academy Images Grid */}
+        <div className="mt-10 sm:mt-14 grid grid-cols-2 gap-3 sm:grid-cols-4 sm:gap-4 lg:gap-6">
+          {ACADEMY_GALLERY.map((item) => (
+            <div
+              key={item.src}
+              className="group relative overflow-hidden border border-line bg-cream shadow-sm transition hover:shadow-lg"
+            >
+              <div className="aspect-[4/5] overflow-hidden">
+                <img
+                  src={item.src}
+                  alt={item.alt}
+                  className="h-full w-full object-cover transition duration-700 group-hover:scale-105"
+                  loading="lazy"
+                />
+              </div>
+              <div className="p-3 sm:p-3.5 bg-paper">
+                <span className="text-[9.5px] sm:text-[10px] font-bold tracking-[0.16em] text-rose uppercase">
+                  {item.tag}
+                </span>
+                <p className="mt-0.5 font-serif text-[13px] sm:text-[15px] font-medium text-ink leading-tight line-clamp-1">
+                  {item.title}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Real student reviews & accreditation badge */}
+        <div className="mt-12 rounded-xl border border-[#EDD28A]/40 bg-gradient-to-br from-[#FFFDF5] to-[#FFF5EB] p-6 sm:p-10 shadow-sm">
+          <div className="grid gap-8 lg:grid-cols-12 lg:items-center">
+            <div className="lg:col-span-7 space-y-4">
+              <div className="flex items-center gap-2">
+                <Stars />
+                <span className="text-[12px] font-bold text-ink">5.0 Star Academy Student Feedback</span>
+              </div>
+              <blockquote className="font-serif text-[17px] sm:text-[19px] italic text-ink leading-snug">
+                “I learned nail art here and they teach very well. Students can use all the practice products freely, and trainers patiently solve every doubt. I mastered extensions, 3D art, and salon pricing!”
+              </blockquote>
+              <p className="text-[13px] font-semibold text-rose-deep">
+                — Harshi Jain & Palak Goswami (Verified Academy Students)
+              </p>
+            </div>
+            <div className="lg:col-span-5 flex flex-col gap-3 sm:flex-row lg:justify-end">
+              <a
+                href={whatsappLink('Hi Nitya Nail Art Academy, I want to enroll in the Basic to Professional nail course with the ₹8,500 bumper offer!')}
+                target="_blank"
+                rel="noopener"
+                className="btn-rose text-center font-bold"
+              >
+                Claim Bumper Offer @ ₹8,500 ↗
+              </a>
+              <a href={`tel:${BUSINESS.phone.tel}`} className="btn-outline text-center text-xs">
+                Call {BUSINESS.phone.display}
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   )
 }
 

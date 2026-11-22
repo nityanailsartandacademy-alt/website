@@ -3,10 +3,13 @@ import { BookBand, PageHero } from '../components/Blocks'
 import { Gallery } from '../components/Gallery'
 import {
   AboutSplit,
+  AcademyCertificatesShowcase,
   AcademyTeaser,
   BridalSpecialSection,
   ContactSection,
   CourseSection,
+  DualVerticalsSection,
+  FeaturedDesignsSection,
   HomeHero,
   InstagramStrip,
   Marquee,
@@ -25,8 +28,11 @@ export function HomePage() {
     <>
       <HomeHero />
       <Marquee />
+      <DualVerticalsSection />
+      <FeaturedDesignsSection />
       <WeddingSpecialBanner />
       <BridalSpecialSection />
+      <AcademyCertificatesShowcase />
       <AboutSplit />
       <ServicesShowcase onHome />
       <WorkStrip />
@@ -50,6 +56,7 @@ export function AboutPage() {
         image="/images/real-burgundy-polka-silk.jpg"
       />
       <AboutSplit cta={{ label: 'See our services', to: '/services' }} />
+      <DualVerticalsSection />
       <Pillars />
       <AcademyTeaser />
       <ReviewsSection />
@@ -69,6 +76,8 @@ export function ServicesPage() {
         text="Gel, acrylic & Korean extensions from ₹249, custom 3D nail art, and our signature Cat Eye Bridal Package @ ₹2,100."
         image="/images/real-art-3d-floral.jpg"
       />
+      <DualVerticalsSection />
+      <FeaturedDesignsSection />
       <WeddingSpecialBanner />
       <BridalSpecialSection />
       <ServicesShowcase />
@@ -89,6 +98,7 @@ export function MenuPage() {
         text="Transparent rates for extensions from ₹249, overlays with free polish from ₹699, toe care from ₹399, and the complete Bridal Package @ ₹2,100."
         image="/images/real-nude-gold-contour.jpg"
       />
+      <FeaturedDesignsSection />
       <WeddingSpecialBanner />
       <BridalSpecialSection />
       <MenuSection />
@@ -106,9 +116,11 @@ export function AcademyPage() {
         title="Learn the craft."
         accent="Build the career."
         text="Practical Basic to Professional course in Vijay Nagar, Indore — 40+ nail art techniques, all products provided, live models & certificate. Save ₹1,500 on this limited batch."
-        image="/images/offers/academy-course.jpg"
+        image="/images/academy/academy-01.jpeg"
         position="center 20%"
       />
+      <DualVerticalsSection />
+      <AcademyCertificatesShowcase />
       <CourseSection />
       <ReviewsSection />
       <BookBand />

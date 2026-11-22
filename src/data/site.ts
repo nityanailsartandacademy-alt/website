@@ -3,7 +3,7 @@
 export const BUSINESS = {
   name: 'Nitya Nail Art & Academy',
   short: 'Nitya',
-  tagline: 'Nail Extensions · Nail Art · Academy',
+  tagline: 'Premium Nail Studio & Certified Nail Training Academy',
   city: 'Indore',
   area: 'Vijay Nagar',
   addressLines: [
@@ -30,7 +30,7 @@ export const BUSINESS = {
   directionsUrl: 'https://www.google.com/maps/dir/?api=1&destination=NITYA+NAIL+ART+%26+ACADEMY+Vijay+Nagar+Indore',
 }
 
-export const whatsappLink = (message = 'Hi Nitya Nail Art, I would like to book a nail appointment.') =>
+export const whatsappLink = (message = 'Hi Nitya Nail Art, I would like to book an appointment / inquire about academy courses.') =>
   `https://wa.me/${BUSINESS.whatsapp.number}?text=${encodeURIComponent(message)}`
 
 export const NAV = [
@@ -43,7 +43,36 @@ export const NAV = [
   { label: 'Contact', href: '/contact' },
 ]
 
-/* ---------- Bridal Special Package (Image 2) ---------- */
+/* ---------- Two Core Business Verticals ---------- */
+
+export const BUSINESS_VERTICALS = {
+  services: {
+    id: 'services',
+    tag: 'Vertical 01 · Studio',
+    title: 'Nail Art Services',
+    subtitle: 'Professional Nail Extensions, Gel, Acrylic, Bridal Nails & Custom 3D Art',
+    description:
+      'Indore’s premier nail studio specializing in long-lasting gel & acrylic extensions, Korean glass nails, bridal sets, and hand-painted nail art. Starting at just ₹249/-.',
+    image: '/images/real-service-01.jpeg',
+    href: '/services',
+    cta: 'Explore Nail Art Services',
+    highlights: ['Temporary Extensions from ₹249', 'Bridal Special Cat Eye @ ₹2,100', '40+ Custom Art Styles'],
+  },
+  academy: {
+    id: 'academy',
+    tag: 'Vertical 02 · Academy',
+    title: 'Nail Art Academy',
+    subtitle: 'Basic to Professional Certified Nail Courses & Practical Skill Training',
+    description:
+      'Certified hands-on training with 100% practical sessions, live model practice, in-class notes, client portfolio photography, and certificate on completion. Bumper offer @ ₹8,500 only.',
+    image: '/images/academy/academy-01.jpeg',
+    href: '/academy',
+    cta: 'Explore Nail Art Academy',
+    highlights: ['Bumper Offer @ ₹8,500 (Save ₹1,500)', 'All Practice Products Provided', 'Certified Diploma Awarded'],
+  },
+}
+
+/* ---------- Bridal Special Package ---------- */
 
 export const BRIDAL_PACKAGE = {
   badge: 'Special Bridal Package',
@@ -66,7 +95,7 @@ export const BRIDAL_PACKAGE = {
   whatsappMessage: 'Hi Nitya Nail Art, I want to book the Bridal Special Package (@ ₹2,100 only) for my wedding/event.',
 }
 
-/* ---------- Wedding Season Special Offers (Images 1 & 4) ---------- */
+/* ---------- Wedding Season Special Offers ---------- */
 
 export const WEDDING_SEASON_SPECIAL = {
   eyebrow: 'Wedding Season Special',
@@ -79,7 +108,83 @@ export const WEDDING_SEASON_SPECIAL = {
   darkPoster: '/images/offers/wedding-special-dark.jpg',
 }
 
-/* ---------- Services ---------- */
+/* ---------- Trending Client Designs with Detailed Tiered Pricing ---------- */
+
+export type FeaturedDesign = {
+  id: string
+  title: string
+  style: string
+  image: string
+  badge?: string
+  prices: {
+    temporary: string
+    korean: string
+    softGel: string
+    gel: string
+    acrylic: string
+  }
+}
+
+export const FEATURED_DESIGNS: FeaturedDesign[] = [
+  {
+    id: 'design-heart-cateye',
+    title: 'Heart Cat-Eye & Gold Butterfly Art',
+    style: 'Pink Cat Eye with Gold Foil Butterfly & Wire Accents',
+    image: '/images/designs/design-01-cateye.jpg',
+    badge: 'Trending Bridal',
+    prices: {
+      temporary: '₹1,600',
+      korean: '₹1,800',
+      softGel: '₹2,000',
+      gel: '₹2,200',
+      acrylic: '₹2,500',
+    },
+  },
+  {
+    id: 'design-glazed-pearl',
+    title: 'Glazed Pink Ombré with Pearl & Wire Contour',
+    style: 'Sheer Glazed Base with Pearl Studs & Gold Line Work',
+    image: '/images/designs/design-02-glazed.jpg',
+    badge: 'Client Favorite',
+    prices: {
+      temporary: '₹1,600',
+      korean: '₹1,800',
+      softGel: '₹2,000',
+      gel: '₹2,200',
+      acrylic: '₹2,500',
+    },
+  },
+  {
+    id: 'design-burgundy-sparkle',
+    title: 'Burgundy French Tip with Sparkling Cat Eye',
+    style: 'Deep Wine Red French Tips with Shimmer Cat-Eye Accents',
+    image: '/images/designs/design-03-burgundy.jpg',
+    badge: 'Wedding Special',
+    prices: {
+      temporary: '₹1,400',
+      korean: '₹1,600',
+      softGel: '₹1,800',
+      gel: '₹2,000',
+      acrylic: '₹2,200',
+    },
+  },
+  {
+    id: 'design-mauve-3d-floral',
+    title: 'Mauve Pink with Sculpted 3D Floral & Silver Chain',
+    style: 'Hand-Sculpted 3D Acrylic Flowers with Silver Chain Outline',
+    image: '/images/designs/design-04-mauve.jpg',
+    badge: 'Handcrafted',
+    prices: {
+      temporary: '₹999',
+      korean: '₹1,299',
+      softGel: '₹1,499',
+      gel: '₹1,699',
+      acrylic: '₹1,899',
+    },
+  },
+]
+
+/* ---------- Services with Real Photos ---------- */
 
 export type Service = {
   id: string
@@ -111,7 +216,7 @@ export const SERVICES: Service[] = [
     category: 'Nail extensions',
     title: 'Gel nail extensions + Polishing',
     text: 'Lightweight, glossy and natural-looking length with free polishing. Lasts approximately 20 days.',
-    image: '/images/real-burgundy-polka-fur.jpg',
+    image: '/images/real-service-06.jpeg',
     from: '₹699',
     regularPrice: '₹799',
     duration: 'Lasts 20 Days',
@@ -121,7 +226,7 @@ export const SERVICES: Service[] = [
     category: 'Nail extensions',
     title: 'Korean gel extensions + Polishing',
     text: 'Ultra-thin, crystal-clear aesthetic length with free polishing. Lasts approximately 15 days.',
-    image: '/images/real-nude-gold-contour.jpg',
+    image: '/images/real-service-07.jpeg',
     from: '₹599',
     regularPrice: '₹699',
     duration: 'Lasts 15 Days',
@@ -130,18 +235,19 @@ export const SERVICES: Service[] = [
     id: 'temporary',
     category: 'Nail extensions',
     title: 'Temporary nail extensions + Polishing',
-    text: 'Quick glam for parties, weddings and short-term celebrations. Lasts approximately 10 days.',
-    image: '/images/real-french-polka-flower.jpg',
-    from: '₹399',
-    regularPrice: '₹499',
+    text: 'Quick glam for parties, weddings and short-term celebrations. Starting at just ₹249/- (lasts 10 days).',
+    image: '/images/real-service-08.jpeg',
+    from: '₹249',
+    regularPrice: '₹399',
     duration: 'Lasts 10 Days',
+    badge: 'Starting @ ₹249',
   },
   {
     id: 'acrylic',
     category: 'Nail extensions',
     title: 'Acrylic nail extensions + Polishing',
     text: 'Our strongest, longest-lasting set with free polishing — about 1 month of flawless wear.',
-    image: '/images/real-matte-gloss-black.jpg',
+    image: '/images/real-service-09.jpeg',
     from: '₹1,099',
     regularPrice: '₹1,399',
     duration: 'Lasts 1 Month',
@@ -149,27 +255,27 @@ export const SERVICES: Service[] = [
   {
     id: 'gel-polish',
     category: 'Overlays & polish',
-    title: 'Gel nail polish',
-    text: 'Glossy salon gel coat directly on your natural nails. (No lasting guarantee).',
-    image: '/images/real-toe-pink-rings.jpg',
+    title: 'Gel nail polish on natural nails',
+    text: 'Glossy salon gel coat directly on your natural nails. Express polish with professional finish.',
+    image: '/images/real-service-10.jpeg',
     from: '₹249',
     regularPrice: '₹349',
   },
   {
     id: 'gel-overlay',
     category: 'Overlays & polish',
-    title: 'Gel overlay',
+    title: 'Gel overlay on natural nails',
     text: 'Strengthen and protect natural nails with a crystal gel coat. Includes free polishing.',
-    image: '/images/real-french-polka-flower.jpg',
+    image: '/images/real-service-11.jpeg',
     from: '₹699',
     duration: 'Free Polishing Included',
   },
   {
     id: 'acrylic-overlay',
     category: 'Overlays & polish',
-    title: 'Acrylic overlay',
+    title: 'Acrylic overlay on natural nails',
     text: 'Extra durability for weak or brittle nails with high gloss. Includes free polishing.',
-    image: '/images/real-burgundy-polka-silk.jpg',
+    image: '/images/real-service-12.jpeg',
     from: '₹999',
     regularPrice: '₹1,199',
     duration: 'Free Polishing Included',
@@ -179,7 +285,7 @@ export const SERVICES: Service[] = [
     category: 'Nail art',
     title: 'Custom nail art & 3D designs',
     text: 'Florals, ombré, chrome, cat eye, marble, spider art, animal prints, stones and 3D/4D art.',
-    image: '/images/real-art-3d-floral.jpg',
+    image: '/images/real-service-13.jpeg',
     from: '₹30 – ₹50 / finger',
   },
   {
@@ -187,13 +293,13 @@ export const SERVICES: Service[] = [
     category: 'Toe nails',
     title: 'Toe extensions & gel overlays',
     text: 'Matching toe gel polishing (₹399), toe extensions (₹699), gel overlays (₹699) & acrylic overlays (₹1,099).',
-    image: '/images/real-toe-pink-rings-wide.jpg',
+    image: '/images/real-service-14.jpeg',
     from: '₹399',
     regularPrice: '₹499',
   },
 ]
 
-/* ---------- Menu & Prices (Wedding Season Special) ---------- */
+/* ---------- Menu & Prices ---------- */
 
 export type MenuItem = {
   name: string
@@ -221,18 +327,13 @@ export const MENU: MenuGroup[] = [
     extra: 'Nail Art Extra: ₹30 to ₹50 per finger',
     items: [
       {
-        name: 'Gel nail polish',
-        price: '₹249',
-        regularPrice: '₹349',
-        durability: 'Express polish',
-        note: 'No lasting guarantee',
-      },
-      {
         name: 'Temporary nail extensions + Polishing',
-        price: '₹399',
+        price: '₹249 – ₹399',
         regularPrice: '₹499',
         durability: 'Lasts 10 Days',
+        note: 'Starting at just ₹249/-',
         extra: 'Nail Art Extra – ₹30/Finger',
+        highlight: true,
       },
       {
         name: 'Korean gel extensions + Polishing',
@@ -250,6 +351,12 @@ export const MENU: MenuGroup[] = [
         highlight: true,
       },
       {
+        name: 'Soft gel nail extensions',
+        price: '₹1,499 – ₹2,000',
+        durability: 'Flexible & Natural',
+        note: 'Tiered according to custom art set',
+      },
+      {
         name: 'Acrylic nail extensions + Polishing',
         price: '₹1,099',
         regularPrice: '₹1,399',
@@ -265,6 +372,13 @@ export const MENU: MenuGroup[] = [
     intro: 'Strengthen your natural nails. Both gel and acrylic overlays include free polishing.',
     extra: 'Nail Art Extra: ₹30 to ₹50 per finger',
     items: [
+      {
+        name: 'Gel nail polish (express)',
+        price: '₹249',
+        regularPrice: '₹349',
+        durability: 'Express polish',
+        note: 'No lasting guarantee',
+      },
       {
         name: 'Gel overlay',
         price: '₹699',
@@ -313,7 +427,7 @@ export const MENU: MenuGroup[] = [
   },
 ]
 
-/* ---------- Academy (Bumper Offer & Full 40+ Curriculum from Image 3) ---------- */
+/* ---------- Academy (Bumper Offer & Full 40+ Curriculum) ---------- */
 
 export const COURSE = {
   name: 'Basic to Professional Nail Course',
@@ -325,12 +439,12 @@ export const COURSE = {
   savings: 'Save ₹1,500',
   posterImage: '/images/offers/academy-course.jpg',
   perks: [
-    '100% Practical Training',
-    'All Practice Products Provided',
-    'Certificate Provided on Completion',
-    'Expert Guidance from Senior Nail Artists',
-    'Lifetime Support & Doubt Solving',
-    'Live Model Hands-on Practice',
+    '100% Practical Hands-on Training',
+    'All Practice Products Provided Free of Cost',
+    'Official Diploma Certificate Provided on Completion',
+    'Live Model Practical Sessions',
+    'Expert Guidance from Senior Nail Masters',
+    'Lifetime Doubt Clearing & Mentorship Support',
   ],
   modules: [
     {
@@ -410,6 +524,59 @@ export const COURSE = {
   ],
 }
 
+/* ---------- Academy Student Certificates & Real Workshop Photos ---------- */
+
+export const ACADEMY_GALLERY = [
+  {
+    src: '/images/academy/academy-01.jpeg',
+    alt: 'Nitya Nail Academy Student Certificate Distribution Ceremony',
+    title: 'Certified Nail Technician',
+    tag: 'Certificate',
+  },
+  {
+    src: '/images/academy/academy-02.jpeg',
+    alt: 'Student receiving certified diploma from Nitya Nail Academy',
+    title: 'Course Completion Award',
+    tag: 'Diploma',
+  },
+  {
+    src: '/images/academy/academy-03.jpeg',
+    alt: 'Live model practical training session at Nitya Nail Academy Indore',
+    title: 'Live Model Practice',
+    tag: 'Hands-on',
+  },
+  {
+    src: '/images/academy/academy-04.jpeg',
+    alt: 'Practical gel & acrylic extension workshop at Nitya Academy',
+    title: 'Practical Extension Workshop',
+    tag: 'Workshop',
+  },
+  {
+    src: '/images/academy/academy-05.jpeg',
+    alt: 'Student practicing nail prep and brush technique',
+    title: 'Technique & Prep Practice',
+    tag: 'Training',
+  },
+  {
+    src: '/images/academy/academy-06.jpeg',
+    alt: 'Graduate holding certificate with academy mentors',
+    title: 'Proud Academy Graduate',
+    tag: 'Success Story',
+  },
+  {
+    src: '/images/academy/academy-07.jpeg',
+    alt: 'Professional salon tool training at Nitya Nail Academy',
+    title: 'Tools & Hygiene Training',
+    tag: 'Sanitation',
+  },
+  {
+    src: '/images/academy/academy-08.jpeg',
+    alt: 'Student nail art portfolio creation and photoshoot session',
+    title: 'Student Portfolio Creation',
+    tag: 'Portfolio',
+  },
+]
+
 /* ---------- Why clients return ---------- */
 
 export const PILLARS = [
@@ -471,18 +638,19 @@ export const REVIEW_TAGS = [
   { label: 'Polite staff', count: 6 },
 ]
 
-/* ---------- Gallery works ---------- */
+/* ---------- Gallery works with Real Photos ---------- */
 
 export const GALLERY = [
-  { src: '/images/real-nude-gold-contour.jpg', alt: 'Nude pink almond extensions with gold contour line art', tag: 'Gold contour', w: 768, h: 1024 },
-  { src: '/images/real-art-3d-floral.jpg', alt: '3D floral nail art with chrome tips and rhinestones', tag: '3D floral', w: 768, h: 1024 },
-  { src: '/images/real-burgundy-polka-fur.jpg', alt: 'Burgundy nails with white polka dots and delicate bow accents', tag: 'Burgundy dots', w: 768, h: 1024 },
-  { src: '/images/real-matte-gloss-black.jpg', alt: 'Matte black stiletto extensions with glossy tip contrast', tag: 'Matte black', w: 768, h: 1024 },
-  { src: '/images/real-french-polka-flower.jpg', alt: 'Burgundy French tips with hand-painted mini flowers', tag: 'French floral', w: 768, h: 1024 },
-  { src: '/images/real-toe-pink-rings.jpg', alt: 'Glossy soft-pink toe gel polish with toe rings', tag: 'Toe polish', w: 768, h: 1024 },
-  { src: '/images/real-art-3d-floral-angle.jpg', alt: 'Detailed angle of 3D sculpted floral nail extensions', tag: 'Sculpted art', w: 768, h: 1024 },
-  { src: '/images/real-burgundy-polka-silk.jpg', alt: 'Deep wine burgundy extensions on satin silk background', tag: 'Wine set', w: 768, h: 1024 },
-  { src: '/images/real-toe-pink-rings-wide.jpg', alt: 'Full set of soft-pink polished toe extensions with ring jewelry', tag: 'Toe extensions', w: 768, h: 1024 },
+  { src: '/images/real-service-01.jpeg', alt: 'Burgundy nails with white mini heart dots and glitter', tag: 'Burgundy hearts', w: 768, h: 1024 },
+  { src: '/images/real-service-02.jpeg', alt: 'Pink heart cat-eye nail art with gold butterfly contour', tag: 'Cat eye butterfly', w: 768, h: 1024 },
+  { src: '/images/real-service-03.jpeg', alt: 'Glazed ombré pink nails with pearls and gold wire details', tag: 'Glazed pearls', w: 768, h: 1024 },
+  { src: '/images/real-service-04.jpeg', alt: 'Wine burgundy french tips with sparkling cat eye glitter', tag: 'Wine french', w: 768, h: 1024 },
+  { src: '/images/real-service-05.jpeg', alt: 'Mauve pink almond nails with 3D sculpted flowers and silver chains', tag: '3D floral', w: 768, h: 1024 },
+  { src: '/images/real-service-06.jpeg', alt: 'Handcrafted floral nail art on burgundy french tips', tag: 'French floral', w: 768, h: 1024 },
+  { src: '/images/real-service-07.jpeg', alt: 'Deep burgundy nail extensions on satin silk background', tag: 'Wine silk', w: 768, h: 1024 },
+  { src: '/images/real-service-08.jpeg', alt: 'Matte black stiletto extensions with glossy tip contrast', tag: 'Matte black', w: 768, h: 1024 },
+  { src: '/images/real-service-09.jpeg', alt: 'Nude pink almond extensions with gold contour line art', tag: 'Gold contour', w: 768, h: 1024 },
+  { src: '/images/real-service-10.jpeg', alt: 'Glossy soft-pink toe gel polish with toe rings', tag: 'Toe polish', w: 768, h: 1024 },
 ]
 
 /* ---------- Per-page SEO metadata ---------- */
@@ -496,45 +664,45 @@ export type PageMeta = {
 export const PAGES: PageMeta[] = [
   {
     path: '/',
-    title: 'Nitya Nail Art & Academy | Nail Extensions & Nail Art Course in Vijay Nagar, Indore',
+    title: 'Nitya Nail Art & Academy | Nail Studio & Certified Academy in Vijay Nagar, Indore',
     description:
-      'Nitya Nail Art & Academy, Vijay Nagar, Indore — Wedding Season Special from ₹249, Bridal Package @ ₹2,100, and certified Basic to Professional Nail Course @ ₹8,500. Rated 4.5★ on Google.',
+      'Nitya Nail Art & Academy, Indore: Explore Nail Art Services (extensions from ₹249, bridal set @ ₹2,100) and Nail Art Academy (certified course @ ₹8,500). Rated 4.5★ on Google.',
   },
   {
     path: '/about',
     title: 'About Us | Nitya Nail Art & Academy — Vijay Nagar, Indore',
     description:
-      'Meet Nitya Nail Art & Academy: a women-owned nail studio and academy in Vijay Nagar, Indore, dedicated to clean technique, honest pricing and certified courses.',
+      'Meet Nitya Nail Art & Academy: a women-owned nail studio and certified academy in Vijay Nagar, Indore, dedicated to clean technique, honest pricing and certified courses.',
   },
   {
     path: '/services',
-    title: 'Nail Services in Indore — Bridal Package ₹2,100, Extensions & Nail Art | Nitya',
+    title: 'Nail Services in Indore — Extensions from ₹249, Bridal Package ₹2,100 | Nitya',
     description:
-      'Wedding Season Special: Bridal Package ₹2,100, Gel extensions ₹699, Acrylic extensions ₹1,099, overlays and toe services at Nitya Nail Art, Vijay Nagar, Indore.',
+      'Explore Nail Art Services: Temporary extensions from ₹249, Korean ₹599, Gel ₹699, Acrylic ₹1,099, Cat Eye Bridal Set @ ₹2,100, custom 3D art in Indore.',
   },
   {
     path: '/menu',
-    title: 'Nail Price List & Offers Indore — Extensions from ₹249 | Nitya Nail Art',
+    title: 'Nail Price List & Trending Designs — Indore | Nitya Nail Art',
     description:
-      'Official Wedding Season Special price list: Gel polish ₹249, Temp extensions ₹399, Korean extensions ₹599, Gel ₹699, Acrylic ₹1,099, Overlays & Toe services.',
+      'Official price list with trending designs: Heart Cat-Eye, Glazed Pearls, 3D floral, Temporary extensions from ₹249, Overlays with free polish.',
   },
   {
     path: '/academy',
-    title: 'Nail Art Course in Indore — Basic to Professional @ ₹8,500 Bumper Offer | Nitya',
+    title: 'Nail Art Academy in Indore — Basic to Professional Course @ ₹8,500 | Nitya',
     description:
-      'Bumper Offer ₹8,500 (was ₹10,000): 40+ nail art techniques, 100% practical training, products provided, live model practice and certificate. Vijay Nagar, Indore.',
+      'Nail Art Academy: Student certificates, 40+ techniques, 100% practical training, products provided, live model practice. Bumper Offer @ ₹8,500.',
   },
   {
     path: '/gallery',
-    title: 'Nail Art Gallery — Extensions, Bridal Sets & Designs | Nitya Nail Art Indore',
+    title: 'Nail Art & Academy Gallery — Real Sets & Certificates | Nitya Indore',
     description:
-      'Browse nail extensions, Cat Eye bridal sets, French tips, ombré, chrome and custom nail art created at Nitya Nail Art & Academy, Vijay Nagar, Indore.',
+      'Browse real nail extensions, bridal sets, and student training & certificate ceremonies at Nitya Nail Art & Academy, Vijay Nagar, Indore.',
   },
   {
     path: '/reviews',
     title: 'Reviews — 4.5★ on Google | Nitya Nail Art & Academy Indore',
     description:
-      'Read what clients and students say about Nitya Nail Art & Academy — rated 4.5★ from 107 Google reviews.',
+      'Read what clients and academy students say about Nitya Nail Art & Academy — rated 4.5★ from 107 Google reviews.',
   },
   {
     path: '/contact',
@@ -551,4 +719,3 @@ export const NOT_FOUND_META: PageMeta = {
 }
 
 export const PAGE_META: Record<string, PageMeta> = Object.fromEntries(PAGES.map((p) => [p.path, p]))
-
