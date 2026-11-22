@@ -66,10 +66,12 @@ export function HomeHero() {
         <div className="absolute inset-0 bg-gradient-to-r from-ink/70 via-ink/20 to-transparent lg:from-ink/80" />
         
         {/* Floating Vertical 1 badge */}
-        <div className="absolute top-4 right-4 sm:top-8 sm:right-8 border-l-4 border-rose bg-paper/95 px-3.5 py-2.5 sm:px-4 sm:py-3 text-ink shadow-2xl backdrop-blur-xs">
+        <div className="absolute top-4 right-4 sm:top-8 sm:right-8 border-l-4 border-rose bg-paper/95 px-3.5 py-2.5 sm:px-4 sm:py-3 text-ink shadow-2xl backdrop-blur-xs max-w-[260px] sm:max-w-[310px]">
           <p className="text-[9px] sm:text-[9.5px] font-bold tracking-[0.18em] text-rose uppercase">Vertical 01 · Services</p>
-          <p className="font-serif text-[18px] sm:text-[22px] font-bold leading-tight">From ₹249/-</p>
-          <p className="text-[10px] sm:text-[11px] text-muted">Bridal Package @ ₹2,100</p>
+          <p className="font-serif text-[15px] sm:text-[19px] font-bold leading-snug mt-0.5">
+            Temporary Extensions Starting at Just ₹249/-
+          </p>
+          <p className="text-[10px] sm:text-[11px] text-muted mt-0.5">Bridal Package @ ₹2,100</p>
         </div>
 
         {/* Floating Vertical 2 badge */}
@@ -141,7 +143,7 @@ export function DualVerticalsSection() {
                 <span className="inline-block bg-rose px-3 py-1 text-[10px] font-bold tracking-[0.18em] text-white uppercase sm:text-[10.5px]">
                   Vertical 01 · Studio
                 </span>
-                <span className="font-serif text-[13px] sm:text-[14px] text-muted italic">From ₹249/-</span>
+                <span className="font-serif text-[12.5px] sm:text-[13.5px] text-muted italic">Temporary Extensions from ₹249/-</span>
               </div>
               <h3 className="display mt-4 text-[28px] sm:text-[36px] text-ink">
                 Nail Art Services
